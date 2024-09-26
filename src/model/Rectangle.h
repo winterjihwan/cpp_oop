@@ -1,10 +1,15 @@
-#include "Shape.h"
+#include <SFML/Graphics.hpp>
 
-class Rectangle : public Shape {
+class Rectangle : public sf::Drawable {
+  sf::RectangleShape shape;
+
 public:
-  void get_x() = 0;
-  void get_y() = 0;
-  void get_z() = 0;
-  void get_height() = 0;
-  void get_width() = 0;
+  Rectangle(float width, float height, float x_coor, float y_coor, int z);
+
+  float get_width();
+  float get_height();
+
+  void set_size(Rectangle &rect, float width, float height);
+
+  void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };

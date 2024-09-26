@@ -1,11 +1,8 @@
-#include "Rectangle.h"
+#include <SFML/Graphics.hpp>
 
-class ShapeFactory {
+class Shape_factory {
 public:
-  virtual Shape *createShape() = 0;
-};
+  virtual ~Shape_factory() = default;
 
-class RectangleFactory : public ShapeFactory {
-public:
-  Shape *createShape() override { return new Rectangle(); }
+  virtual sf::Drawable *createShape() = 0;
 };
