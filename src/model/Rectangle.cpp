@@ -1,8 +1,8 @@
 #include "Rectangle.h"
 
-int Rectangle::get_height() { return height; }
-int Rectangle::get_width() { return width; }
+float Rectangle::get_width() { return shape.getSize().x; }
+float Rectangle::get_height() { return shape.getSize().y; }
 
-void Rectangle::set_size(Rectangle *rect, int height) {
-  rect->height = height;
+void Rectangle::set_size(Rectangle &rect, float width, float height) {
+  shape.setPosition(width, height);
 };

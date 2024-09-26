@@ -1,10 +1,13 @@
 #include <SFML/Graphics.hpp>
+#include <vector>
 
-class Renderer {
+class Canvas_view {
   sf::RenderWindow window;
 
 public:
-  Renderer(int width, int height)
+  Canvas_view(int width, int height)
       : window{sf::VideoMode(width, height), "oop cpp"} {};
-  void render(sf::RenderWindow *window);
+
+  void render(std::vector<sf::Drawable *> shapes);
+  void update_view(std::vector<sf::Drawable *> shapes);
 };

@@ -1,14 +1,28 @@
+#include <SFML/Graphics.hpp>
+
+#ifndef SHAPE_H
+#define SHAPE_H
+
 #include "Shape.h"
 
-class Rectangle : public Shape {
-  int width, height;
+#endif // SHAPE_H
+
+class Rectangle : public sf::Drawable {
+  sf::RectangleShape shape;
 
 public:
-  Rectangle(int width, int height, double x_coor, double y_coor, int z)
-      : Shape(x_coor, y_coor, z), width{width}, height{height} {}
+  Rectangle(float width, float height, float x_coor, float y_coor, int z)
+      : shape(sf::RectangleShape(sf::Vector2f(width, height))) {
+    shape.setPosition(x_coor, y_coor);
 
-  int get_height();
-  int get_width();
+    // TODO: color
+    /*shape.setFillColor();*/
+  }
 
-  void set_size(Rectangle *rect, int height);
+  float get_width();
+  float get_height();
+
+  void set_size(Rectangle &rect, float width, float height);
+
+  void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };
