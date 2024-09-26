@@ -1,9 +1,22 @@
+struct Coor {
+  double x, y;
+};
+
 class Shape {
+protected:
+  Coor coor;
+  int z;
+  Shape(double x_coor, double y_coor, int z)
+      : coor{.x = x_coor, .y = y_coor}, z{z} {};
+
 public:
-  virtual void get_x() = 0;
-  virtual void get_y() = 0;
-  virtual void get_z() = 0;
-  virtual void get_height() = 0;
-  virtual void get_width() = 0;
   virtual ~Shape() = default;
+  virtual void draw() = 0;
+
+  void set_coor(double x_coor, double y_coor);
+
+  void set_z(int z);
+
+  int get_z(Shape *shape);
+  Coor get_coor(Shape *shape);
 };

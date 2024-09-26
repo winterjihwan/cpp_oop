@@ -1,10 +1,14 @@
 #include "Shape.h"
 
 class Rectangle : public Shape {
+  int width, height;
+
 public:
-  void get_x() = 0;
-  void get_y() = 0;
-  void get_z() = 0;
-  void get_height() = 0;
-  void get_width() = 0;
+  Rectangle(int width, int height, double x_coor, double y_coor, int z)
+      : Shape(x_coor, y_coor, z), width{width}, height{height} {}
+
+  int get_height();
+  int get_width();
+
+  void set_size(Rectangle *rect, int height);
 };
