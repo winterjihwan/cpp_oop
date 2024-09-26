@@ -8,5 +8,5 @@ int main() {
   RectangleFactory rect_factory{};
   Canvas_controller rect_controller{&rect_factory, &canvas};
 
-  /*rect_controller.create_rectangle();*/
+  rect_controller.create_rectangle();
 }

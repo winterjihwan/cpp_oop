@@ -1,6 +1,9 @@
 #include "CanvasView.h"
 #include <vector>
 
+Canvas_view::Canvas_view(int width, int height)
+    : window{sf::VideoMode(width, height), "oop cpp"} {};
+
 void Canvas_view::render(std::vector<sf::Drawable *> shapes) {
   while (window.isOpen()) {
     sf::Event event;
@@ -19,3 +22,5 @@ void Canvas_view::render(std::vector<sf::Drawable *> shapes) {
     window.display();
   }
 }
+
+void update_view(std::vector<sf::Drawable *> shapes) {}

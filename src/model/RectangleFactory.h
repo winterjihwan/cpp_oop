@@ -9,5 +9,6 @@
 
 class RectangleFactory : public Shape_factory {
 public:
+  RectangleFactory();
   sf::Drawable *createShape() override;
 };
