@@ -1,11 +1,9 @@
 #include "Rectangle.h"
-#include <iostream>
 
 Rectangle::Rectangle(float width, float height, float x_coor, float y_coor,
                      int z)
     : shape(sf::RectangleShape(sf::Vector2f(width, height))) {
   shape.setPosition(x_coor, y_coor);
-  shape.setFillColor(sf::Color::Yellow);
 
   // TODO: color
   /*shape.setFillColor();*/
