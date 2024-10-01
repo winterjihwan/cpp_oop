@@ -1,14 +1,15 @@
-#include "Rectangle.h"
-
-#ifndef SHAPE_FACTORY_H
-#define SHAPE_FACTORY_H
+#ifndef RECTANGLE_FACTORY_H
+#define RECTANGLE_FACTORY_H
 
 #include "ShapeFactory.h"
+#include <SFML/Graphics.hpp>
 
-#endif // SHAPE_FACTORY_H
-
-class RectangleFactory : public Shape_factory {
+// RectangleFactory class definition
+class RectangleFactory : public Shape_factory
+{
 public:
-  RectangleFactory();
+  // Function prototype (no implementation in the header file)
   sf::Drawable *createShape() override;
 };
+
+#endif // RECTANGLE_FACTORY_H

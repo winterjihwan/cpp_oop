@@ -1,26 +1,26 @@
 #include "CanvasView.h"
 #include <vector>
 
-Canvas_view::Canvas_view(int width, int height)
-    : window{sf::VideoMode(width, height), "oop cpp"} {};
+// 생성자: 포인터로 전달받은 윈도우 객체 사용
+Canvas_view::Canvas_view(sf::RenderWindow *window)
+    : window{window} {}
 
-void Canvas_view::render(std::vector<sf::Drawable *> shapes) {
-  while (window.isOpen()) {
-    sf::Event event;
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
-        window.close();
-      }
-    }
+// 도형을 화면에 렌더링
+void Canvas_view::render(std::vector<sf::Drawable *> shapes)
+{
+  window->clear(sf::Color::Black); // 윈도우 지우기
 
-    window.clear(sf::Color::Black);
-
-    for (sf::Drawable *shape : shapes) {
-      window.draw(*shape);
-    }
-
-    window.display();
+  // 각 도형을 윈도우에 그리기
+  for (sf::Drawable *shape : shapes)
+  {
+    window->draw(*shape);
   }
+
+  window->display(); // 윈도우 업데이트
 }
 
-void update_view(std::vector<sf::Drawable *> shapes) {}
+// 업데이트 메서드 (현재 빈 메서드로 유지)
+void Canvas_view::update_view(std::vector<sf::Drawable *> shapes)
+{
+  // 추가적인 업데이트 로직을 구현할 때 사용 가능
+}
