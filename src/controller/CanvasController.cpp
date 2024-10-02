@@ -64,7 +64,9 @@ void Canvas_controller::select_shape(const sf::Vector2f &click_position)
 void Canvas_controller::move_shape(const sf::Vector2f &new_position)
 {
   if (!selected_shape || !is_selected)
+  {
     return;
+  }
 
   if (auto rect_shape = dynamic_cast<sf::RectangleShape *>(selected_shape))
   {

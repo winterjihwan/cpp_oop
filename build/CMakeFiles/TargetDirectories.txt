@@ -1,3 +1,0 @@
-C:/personal_proj/cpp_oop/build/CMakeFiles/MyProject.dir
-C:/personal_proj/cpp_oop/build/CMakeFiles/edit_cache.dir
-C:/personal_proj/cpp_oop/build/CMakeFiles/rebuild_cache.dir
