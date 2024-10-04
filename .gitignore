@@ -1,5 +1,8 @@
 /Debug/
 
+.clangd
+*.txt
+.git
 .vscode
 *.exe
-
+CMakelists.txt
