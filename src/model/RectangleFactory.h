@@ -5,8 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 // RectangleFactory class definition
-class RectangleFactory : public Shape_factory
-{
+class RectangleFactory : public Shape_factory {
 public:
   // Function prototype (no implementation in the header file)
   sf::Drawable *createShape() override;

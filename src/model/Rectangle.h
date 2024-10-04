@@ -6,8 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 // Rectangle 도형 클래스 정의
-class Rectangle : public Shape
-{
+class Rectangle : public Shape {
 private:
   sf::RectangleShape shape; // SFML의 사각형 도형
 
@@ -18,8 +17,7 @@ public:
   float get_width() const;
   float get_height() const;
 
-  bool isSelected(const sf::Vector2f &point) const override
-  {
+  bool isSelected(const sf::Vector2f &point) const override {
     return shape.getGlobalBounds().contains(point);
   }
 

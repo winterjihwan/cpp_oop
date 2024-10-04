@@ -5,4 +5,4 @@
 .git
 .vscode
 *.exe
-CMakelists.txt
+CMakeLists.txt

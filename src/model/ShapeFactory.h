@@ -4,8 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 // 추상 팩토리 클래스
-class Shape_factory
-{
+class Shape_factory {
 public:
   virtual ~Shape_factory() = default;
 
