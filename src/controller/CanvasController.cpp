@@ -5,10 +5,11 @@ Canvas_controller::Canvas_controller(Shape_factory *rectangle_factory,
                                      Shape_factory *ellipse_factory,
                                      Shape_factory *line_factory,
                                      Shape_factory *text_factory,
+                                     Shape_factory *image_factory,
                                      Canvas_view *canvas_view)
     : rectangle_factory{rectangle_factory}, ellipse_factory{ellipse_factory},
       line_factory{line_factory}, text_factory{text_factory},
-      canvas_view(canvas_view) {}
+      image_factory{image_factory}, canvas_view(canvas_view) {}
 
 // 사각형 생성
 void Canvas_controller::create_rectangle() {
@@ -33,6 +34,12 @@ void Canvas_controller::create_line() {
 
 void Canvas_controller::create_text() {
   sf::Drawable *new_shape = text_factory->createShape();
+  shapes.push_back(new_shape);
+  canvas_view->render(shapes);
+}
+
+void Canvas_controller::create_image() {
+  sf::Drawable *new_shape = image_factory->createShape();
   shapes.push_back(new_shape);
   canvas_view->render(shapes);
 }

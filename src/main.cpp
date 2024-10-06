@@ -1,5 +1,6 @@
 #include "controller/CanvasController.h"
 #include "model/EllipseFactory.h"
+#include "model/ImageFactory.h"
 #include "model/LineFactory.h"
 #include "model/RectangleFactory.h"
 #include "model/TextFactory.h"
@@ -14,14 +15,17 @@ int main() {
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
   TextFactory textFactory;
+  ImageFactory imageFactory;
   Canvas_view canvas_view(&window);
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
-                               &textFactory, &canvas_view);
+                               &textFactory, &imageFactory, &canvas_view);
 
-  controller.create_rectangle();
-  controller.create_ellipse();
-  controller.create_line();
-  controller.create_text();
+  /*controller.create_rectangle();*/
+  /*controller.create_ellipse();*/
+  /*controller.create_line();*/
+  /*controller.create_text();*/
+  /*controller.create_text();*/
+  controller.create_image();
 
   sf::Vector2f initial_click_position;
   bool is_dragging = false;
