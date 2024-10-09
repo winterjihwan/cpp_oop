@@ -1,7 +1,6 @@
 CMakeFiles/main.dir/src/controller/CanvasController.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/ShapeFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../model/Shape.h \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
@@ -497,5 +496,9 @@ CMakeFiles/main.dir/src/controller/CanvasController.cpp.o: \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
   /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
+  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/ShapeFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../view/CanvasView.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../view/../model/Shape.h
+  /Users/anjihwan/cpp/cpp_oop/src/controller/../view/../model/Shape.h \
+  /Users/anjihwan/cpp/cpp_oop/src/controller/Sidebar.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/istream

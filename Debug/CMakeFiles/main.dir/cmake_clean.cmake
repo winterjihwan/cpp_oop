@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o.d"
   "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o"
   "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o.d"
+  "CMakeFiles/main.dir/src/controller/Sidebar.cpp.o"
+  "CMakeFiles/main.dir/src/controller/Sidebar.cpp.o.d"
   "CMakeFiles/main.dir/src/main.cpp.o"
   "CMakeFiles/main.dir/src/main.cpp.o.d"
   "CMakeFiles/main.dir/src/model/Canvas.cpp.o"

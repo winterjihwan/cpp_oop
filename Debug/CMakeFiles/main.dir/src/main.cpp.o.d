@@ -1,7 +1,6 @@
 CMakeFiles/main.dir/src/main.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/main.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/ShapeFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../model/Shape.h \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
@@ -497,14 +496,10 @@ CMakeFiles/main.dir/src/main.cpp.o: \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
   /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
+  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/ShapeFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../view/CanvasView.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../view/../model/Shape.h \
+  /Users/anjihwan/cpp/cpp_oop/src/controller/Sidebar.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/EllipseFactory.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/../model/Ellipse.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/LineFactory.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/Line.h \
-  /Users/anjihwan/cpp/cpp_oop/src/model/RectangleFactory.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../model/Rectangle.h \
-  /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/istream
+  /Users/anjihwan/cpp/cpp_oop/src/model/RectangleFactory.h

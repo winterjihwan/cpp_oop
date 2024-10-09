@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "MyProject",
+					"name" : "main",
 					"targetIndexes" : 
 					[
 						0
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-64fac60fc7a2b94eef2d.json",
+					"jsonFile" : "target-main-Debug-1913a67c6ec93ce6ce0c.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}

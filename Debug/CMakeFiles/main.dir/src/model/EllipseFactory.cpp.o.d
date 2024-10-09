@@ -1,6 +1,8 @@
 CMakeFiles/main.dir/src/model/EllipseFactory.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/model/EllipseFactory.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/model/EllipseFactory.h \
+  /Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.h \
+  /Users/anjihwan/cpp/cpp_oop/src/model/Shape.h \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
   /usr/local/include/SFML/Config.hpp \
@@ -495,7 +497,4 @@ CMakeFiles/main.dir/src/model/EllipseFactory.cpp.o: \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
   /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.h \
-  /Users/anjihwan/cpp/cpp_oop/src/model/Shape.h \
-  /Users/anjihwan/cpp/cpp_oop/src/model/../model/Ellipse.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.h

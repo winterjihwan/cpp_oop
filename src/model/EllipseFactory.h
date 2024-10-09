@@ -8,7 +8,7 @@
 class EllipseFactory : public Shape_factory {
 public:
   // Function prototype (no implementation in the header file)
-  Shape *createShape() override;
+  Shape *createShape(const sf::Vector2f &position) override;
 };
 
 #endif // ELLIPSE_FACTORY_H

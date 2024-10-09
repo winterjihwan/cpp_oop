@@ -201,6 +201,30 @@ src/controller/CanvasController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/controller/CanvasController.cpp.s
 .PHONY : src/controller/CanvasController.cpp.s
 
+src/controller/Sidebar.o: src/controller/Sidebar.cpp.o
+.PHONY : src/controller/Sidebar.o
+
+# target to build an object file
+src/controller/Sidebar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/controller/Sidebar.cpp.o
+.PHONY : src/controller/Sidebar.cpp.o
+
+src/controller/Sidebar.i: src/controller/Sidebar.cpp.i
+.PHONY : src/controller/Sidebar.i
+
+# target to preprocess a source file
+src/controller/Sidebar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/controller/Sidebar.cpp.i
+.PHONY : src/controller/Sidebar.cpp.i
+
+src/controller/Sidebar.s: src/controller/Sidebar.cpp.s
+.PHONY : src/controller/Sidebar.s
+
+# target to generate assembly for a file
+src/controller/Sidebar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/controller/Sidebar.cpp.s
+.PHONY : src/controller/Sidebar.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -531,6 +555,9 @@ help:
 	@echo "... src/controller/CanvasController.o"
 	@echo "... src/controller/CanvasController.i"
 	@echo "... src/controller/CanvasController.s"
+	@echo "... src/controller/Sidebar.o"
+	@echo "... src/controller/Sidebar.i"
+	@echo "... src/controller/Sidebar.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/anjihwan/cpp/cpp_oop/src/command/MoveCommand.cpp" "CMakeFiles/main.dir/src/command/MoveCommand.cpp.o" "gcc" "CMakeFiles/main.dir/src/command/MoveCommand.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/command/ResizeCommand.cpp" "CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o" "gcc" "CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.cpp" "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o" "gcc" "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o.d"
+  "/Users/anjihwan/cpp/cpp_oop/src/controller/Sidebar.cpp" "CMakeFiles/main.dir/src/controller/Sidebar.cpp.o" "gcc" "CMakeFiles/main.dir/src/controller/Sidebar.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp" "CMakeFiles/main.dir/src/model/Canvas.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Canvas.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.cpp" "CMakeFiles/main.dir/src/model/Ellipse.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Ellipse.cpp.o.d"

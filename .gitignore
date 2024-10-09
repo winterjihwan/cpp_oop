@@ -1,4 +1,3 @@
-.clangd
 .vscode/
 CMakelists.txt
 main.exe

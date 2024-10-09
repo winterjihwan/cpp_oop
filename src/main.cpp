@@ -1,28 +1,23 @@
 #include "controller/CanvasController.h"
+#include "controller/Sidebar.h"
 #include "model/EllipseFactory.h"
 #include "model/LineFactory.h"
 #include "model/RectangleFactory.h"
-#include "view/CanvasView.h"
 #include <SFML/Graphics.hpp>
 
 int main() {
   sf::RenderWindow window(sf::VideoMode(800, 600),
                           "Shape Factory Pattern Example");
+  window.setVerticalSyncEnabled(true);
 
+  // Create factories, view, and sidebar
   RectangleFactory rectangleFactory;
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
-  Canvas_view canvas_view(&window);
+  Canvas_view canvasView(&window);
+  Sidebar sidebar(200.0f, 600.0f); // Sidebar width of 200 pixels
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
-                               &canvas_view);
-
-  // Create shapes
-  controller.create_rectangle();
-  controller.create_ellipse();
-  controller.create_line();
-
-  sf::Vector2f initial_click_position;
-  bool is_dragging = false;
+                               &canvasView, &sidebar);
 
   while (window.isOpen()) {
     sf::Event event;
@@ -30,38 +25,28 @@ int main() {
       if (event.type == sf::Event::Closed)
         window.close();
 
-      // Start dragging on mouse press
+      // Handle mouse clicks
       if (event.type == sf::Event::MouseButtonPressed) {
         if (event.mouseButton.button == sf::Mouse::Left) {
-          initial_click_position =
+          sf::Vector2f clickPosition =
               window.mapPixelToCoords(sf::Mouse::getPosition(window));
-          controller.select_shape(initial_click_position);
-          is_dragging = controller.getSelectedShape() != nullptr;
-        }
-      }
 
-      // Move shape if dragging
-      if (event.type == sf::Event::MouseMoved && is_dragging) {
-        sf::Vector2f new_position =
-            window.mapPixelToCoords(sf::Mouse::getPosition(window));
-        controller.move_shape(new_position);
-        controller.render_shapes(); // render_shapes() 호출하여 위치 업데이트 후
-                                    // 전체 렌더링
-      }
-
-      // Stop dragging on mouse release
-      if (event.type == sf::Event::MouseButtonReleased) {
-        if (event.mouseButton.button == sf::Mouse::Left) {
-          is_dragging = false;
-          controller.end_drag(); // Ensure dragging ends
+          // If click is within the sidebar's area
+          if (clickPosition.x <= 200.0f) {
+            controller.handleSidebarClick(clickPosition);
+          } else {
+            // Create a shape on the canvas at the click position
+            controller.create_shape(controller.getSelectedShapeType(),
+                                    clickPosition);
+          }
         }
       }
     }
 
-    window.clear();
-    controller
-        .render_shapes(); // Ensure shapes are rendered only once per frame
-    window.display();
+    window.clear(sf::Color::White); // Clear the window
+    controller.render_shapes();     // Render the shapes on the canvas
+    sidebar.render(window);         // Render the sidebar
+    window.display();               // Display the rendered frame
   }
 
   return 0;
