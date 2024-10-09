@@ -3,22 +3,20 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "../model/Shape.h" // Shape 클래스 포함
 
-// Canvas_view 클래스 정의
 class Canvas_view
 {
 private:
-  sf::RenderWindow *window; // sf::RenderWindow 포인터로 변경하여 외부 윈도우를 사용
-  // 원래는 독립적인 RenderWindow 객체를 가지고 있었으나, main에서 전달받도록 수정함
+  sf::RenderWindow *window; // 윈도우 객체
+
 public:
-  // 기존 생성자를 변경하여 포인터를 받도록 수정
+  // 생성자
   Canvas_view(sf::RenderWindow *window);
 
-  // 도형을 화면에 렌더링하는 메서드
-  void render(std::vector<sf::Drawable *> shapes);
-
-  // 업데이트 메서드 (추가적인 처리 필요 시 사용)
-  void update_view(std::vector<sf::Drawable *> shapes);
+  // Shape* 타입의 벡터를 받아들임
+  void render(std::vector<Shape *> shapes);
+  void update_view(std::vector<Shape *> shapes);
 };
 
 #endif // CANVAS_VIEW_H

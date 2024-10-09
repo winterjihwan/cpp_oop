@@ -6,6 +6,8 @@ Ellipse::Ellipse(float x, float y, float radiusX, float radiusY)
     ellipse.setPosition(x, y);
     ellipse.setRadius(radiusX);                // 원의 기본 반지름 설정 (X축 반지름)
     ellipse.setScale(1.0f, radiusY / radiusX); // Y축 반지름을 설정하여 타원 모양 만듦
+
+    ellipse.setFillColor(sf::Color::Blue); // 채우기 색상 설정
 }
 
 // get_width() 정의
@@ -58,6 +60,19 @@ sf::Vector2f Ellipse::getSize() const
 void Ellipse::setSize(const sf::Vector2f &size)
 {
     set_size(size.x, size.y);
+}
+
+// Ellipse의 highlight 메서드 정의
+void Ellipse::highlight()
+{
+    ellipse.setOutlineThickness(5.0f);       // 테두리 두께 설정
+    ellipse.setOutlineColor(sf::Color::Red); // 테두리 색상 설정
+}
+
+void Ellipse::unhighlight()
+{
+    ellipse.setOutlineThickness(0.0f); // 테두리 두께를 0으로 설정하여 하이라이트 해제
+    ellipse.setOutlineColor(sf::Color::Black);
 }
 
 // draw 메서드 정의

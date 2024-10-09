@@ -3,13 +3,13 @@
 
 #include "../model/ShapeFactory.h"
 #include "../view/CanvasView.h"
+#include "../model/Shape.h" // Shape 클래스를 포함
 #include <vector>
 #include <SFML/Graphics.hpp>
 
 class Shape_factory;
 class Canvas_view;
 
-// Canvas_controller 클래스 정의
 class Canvas_controller
 {
 private:
@@ -17,11 +17,16 @@ private:
   Shape_factory *ellipse_factory;
   Shape_factory *line_factory;
   Canvas_view *canvas_view;
-  std::vector<sf::Drawable *> shapes;     // 모든 도형을 관리할 벡터
-  sf::Drawable *selected_shape = nullptr; // 현재 선택된 도형
-  sf::Vector2f offset;                    // 도형과 마우스 클릭 위치 간의 기준점
-  bool is_selected = false;               // 도형이 선택된 상태인지 여부
-  bool is_dragging = false;               // 드래그 중인지 여부 확인
+
+  // 모든 도형을 관리할 벡터 (Shape* 타입으로 변경)
+  std::vector<Shape *> shapes;
+
+  // 현재 선택된 도형 (Shape* 타입으로 변경)
+  Shape *selected_shape = nullptr;
+
+  sf::Vector2f offset;      // 도형과 마우스 클릭 위치 간의 기준점
+  bool is_selected = false; // 도형이 선택된 상태인지 여부
+  bool is_dragging = false; // 드래그 중인지 여부 확인
 
 public:
   // 생성자
@@ -40,8 +45,8 @@ public:
   void deselect_shape();
   void end_drag();
 
-  // 선택된 도형을 반환하는 메서드 추가
-  sf::Drawable *getSelectedShape() const;
+  // 선택된 도형을 반환하는 메서드 (Shape* 타입으로 변경)
+  Shape *getSelectedShape() const;
 
   // 모든 도형을 화면에 다시 그리기
   void render_shapes();

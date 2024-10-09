@@ -38,6 +38,10 @@ public:
   // 크기 설정 메서드
   void setSize(const sf::Vector2f &size) override;
 
+  void highlight() override;
+
+  void unhighlight() override;
+
   // SFML Drawable의 draw 메서드 오버라이드
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };
