@@ -3,6 +3,7 @@
 #include "model/EllipseFactory.h"
 #include "model/LineFactory.h"
 #include "model/RectangleFactory.h"
+#include "model/TextFactory.h"
 #include <SFML/Graphics.hpp>
 
 int main() {
@@ -10,14 +11,14 @@ int main() {
                           "Shape Factory Pattern Example");
   window.setVerticalSyncEnabled(true);
 
-  // Create factories, view, and sidebar
   RectangleFactory rectangleFactory;
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
+  TextFactory textFactory;
   Canvas_view canvasView(&window);
-  Sidebar sidebar(200.0f, 600.0f); // Sidebar width of 200 pixels
+  Sidebar sidebar(200.0f, 600.0f);
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
-                               &canvasView, &sidebar);
+                               &textFactory, &canvasView, &sidebar);
 
   while (window.isOpen()) {
     sf::Event event;

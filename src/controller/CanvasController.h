@@ -17,6 +17,7 @@ private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
   Shape_factory *line_factory;
+  Shape_factory *text_factory;
   Canvas_view *canvas_view;
   Sidebar *sidebar;
 
@@ -35,7 +36,8 @@ public:
   // Constructor
   Canvas_controller(Shape_factory *rectangle_factory,
                     Shape_factory *ellipse_factory, Shape_factory *line_factory,
-                    Canvas_view *canvas_view, Sidebar *sidebar);
+                    Shape_factory *text_factory, Canvas_view *canvas_view,
+                    Sidebar *sidebar);
 
   void handleSidebarClick(const sf::Vector2f &clickPosition);
 

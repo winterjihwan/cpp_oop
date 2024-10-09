@@ -5,15 +5,16 @@
 Canvas_controller::Canvas_controller(Shape_factory *rectangle_factory,
                                      Shape_factory *ellipse_factory,
                                      Shape_factory *line_factory,
+                                     Shape_factory *text_factory,
                                      Canvas_view *canvas_view, Sidebar *sidebar)
     : rectangle_factory{rectangle_factory}, ellipse_factory{ellipse_factory},
-      line_factory{line_factory}, canvas_view{canvas_view}, sidebar{sidebar} {}
+      line_factory{line_factory}, text_factory{text_factory},
+      canvas_view{canvas_view}, sidebar{sidebar} {}
 
 void Canvas_controller::handleSidebarClick(const sf::Vector2f &clickPosition) {
   std::string shapeType = sidebar->handleClick(clickPosition);
   std::cout << "ShapeType: " << shapeType << "\n";
   if (!shapeType.empty()) {
-    std::cout << "Not empty\n";
     selectedShapeType = shapeType; // Store the selected shape type
   }
 }
@@ -34,6 +35,8 @@ void Canvas_controller::create_shape(const std::string &shapeType,
     new_shape = ellipse_factory->createShape(position);
   } else if (shapeType == "Line") {
     new_shape = line_factory->createShape(position);
+  } else if (shapeType == "Text") {
+    new_shape = text_factory->createShape(position);
   }
 
   if (new_shape) {

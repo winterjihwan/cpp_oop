@@ -2,6 +2,7 @@
 #include "../model/EllipseFactory.h"
 #include "../model/LineFactory.h"
 #include "../model/RectangleFactory.h"
+#include "../model/TextFactory.h"
 
 Sidebar::Sidebar(float width, float height) {
   sidebarRect.setSize(sf::Vector2f(width, height));
@@ -12,7 +13,7 @@ Sidebar::Sidebar(float width, float height) {
 
 void Sidebar::initializeButtons() {
   float buttonHeight = 50.0f;
-  std::vector<std::string> labels = {"Rectangle", "Ellipse", "Line"};
+  std::vector<std::string> labels = {"Rectangle", "Ellipse", "Line", "Text"};
   buttonLabels = labels;
 
   for (size_t i = 0; i < labels.size(); ++i) {
@@ -28,6 +29,7 @@ void Sidebar::createPreviews() {
   RectangleFactory rectangleFactory;
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
+  TextFactory textFactory;
 
   // Create a rectangle preview shape
   std::unique_ptr<Shape> rectanglePreview(
@@ -45,6 +47,12 @@ void Sidebar::createPreviews() {
   std::unique_ptr<Shape> linePreview(lineFactory.createShape({10.0f, 130.0f}));
   linePreview->setSize({30.0f, 2.0f});
   previewShapes.push_back(std::move(linePreview));
+
+  // Create a text preview shape
+  std::unique_ptr<Shape> textPreview(textFactory.createShape({10.0f, 190.0f}));
+  textPreview->setSize(
+      {30.0f, 20.0f}); // This could adjust the scaling of the text.
+  previewShapes.push_back(std::move(textPreview));
 }
 
 void Sidebar::render(sf::RenderWindow &window) {
