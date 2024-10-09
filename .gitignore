@@ -1,8 +1,5 @@
-/Debug/
-
 .clangd
-*.txt
-.git
-.vscode
-*.exe
+.vscode/
 CMakelists.txt
+main.exe
+build/

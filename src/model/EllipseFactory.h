@@ -3,13 +3,14 @@
 
 #include <SFML/Graphics.hpp>
 #include "ShapeFactory.h"
+#include "../model/Ellipse.h"
 
 // EllipseFactory class definition
 class EllipseFactory : public Shape_factory
 {
 public:
     // Function prototype (no implementation in the header file)
-    sf::Drawable *createShape() override;
+    Shape *createShape() override;
 };
 
 #endif // ELLIPSE_FACTORY_H

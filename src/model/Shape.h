@@ -24,6 +24,12 @@ public:
 
     // 도형의 선택 여부 감지
     virtual bool isSelected(const sf::Vector2f &point) const = 0;
+
+    // 도형의 선택시 highlight 표시
+    virtual void highlight() = 0;
+
+    // 도형의 하이라이트를 해제
+    virtual void unhighlight() = 0;
 };
 
 #endif // SHAPE_H
