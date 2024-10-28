@@ -1,6 +1,7 @@
 #include "StatusView.h"
 #include <sstream>
 #include <stdexcept>
+#include <iostream>
 
 // Constructor
 StatusView::StatusView(sf::RenderWindow *window) : window(window)
@@ -61,36 +62,51 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window)
 
 void StatusView::render(const Shape *shape)
 {
+    // Draw the background status bar and labels
     window->draw(statusBar);
     window->draw(positionLabel);
     window->draw(colorLabel);
     window->draw(sizeLabel);
 
+    // If there’s a shape, update display text only if not focused
     if (shape != nullptr)
     {
-        updateEntryFields(shape);
+        // Only call updateEntryFields if no field is currently focused to prevent overwriting user edits
+        if (focusedField == FocusedField::None)
+        {
+            updateEntryFields(shape);
+        }
 
+        // Update the sf::Text objects with the latest entry values
         posXEntryText.setString(posXEntryValue);
         posYEntryText.setString(posYEntryValue);
         sizeXEntryText.setString(sizeXEntryValue);
         sizeYEntryText.setString(sizeYEntryValue);
 
+        // Set colors based on focus to indicate active editing
+        posXEntryText.setFillColor(focusedField == FocusedField::PosX ? sf::Color::Blue : sf::Color::Black);
+        posYEntryText.setFillColor(focusedField == FocusedField::PosY ? sf::Color::Blue : sf::Color::Black);
+        sizeXEntryText.setFillColor(focusedField == FocusedField::SizeX ? sf::Color::Blue : sf::Color::Black);
+        sizeYEntryText.setFillColor(focusedField == FocusedField::SizeY ? sf::Color::Blue : sf::Color::Black);
+
+        // Draw updated text on the window
         window->draw(posXEntryText);
         window->draw(posYEntryText);
         window->draw(sizeXEntryText);
         window->draw(sizeYEntryText);
 
+        // Set and display color information
         sf::Color shapeColor = shape->getColor();
         std::ostringstream colorStream;
         colorStream << "R: " << static_cast<int>(shapeColor.r)
                     << ", G: " << static_cast<int>(shapeColor.g)
                     << ", B: " << static_cast<int>(shapeColor.b);
         colorValue.setString(colorStream.str());
-
         window->draw(colorValue);
     }
     else
     {
+        // Clear the status view if no shape is selected
         clear();
     }
 }
@@ -120,7 +136,6 @@ void StatusView::setFocusedField(FocusedField field)
     focusedField = field;
 }
 
-// Handle text input for editable fields
 void StatusView::handleTextInput(char inputChar)
 {
     std::string *currentEntry = nullptr;
@@ -140,17 +155,22 @@ void StatusView::handleTextInput(char inputChar)
         currentEntry = &sizeYEntryValue;
         break;
     default:
+        std::cout << "No field is focused." << std::endl;
         return;
     }
 
-    if (inputChar == '\b' && currentEntry != nullptr) // Backspace handling
+    if (inputChar == '\b' && currentEntry != nullptr) // Handle backspace
     {
         if (!currentEntry->empty())
+        {
             currentEntry->pop_back();
+            std::cout << "Backspace pressed. Updated field: " << *currentEntry << std::endl;
+        }
     }
-    else if (std::isdigit(inputChar)) // Add digit to entry
+    else if (std::isdigit(inputChar)) // Only allow digits
     {
         *currentEntry += inputChar;
+        std::cout << "Digit entered: " << inputChar << " Updated field: " << *currentEntry << std::endl;
     }
 }
 

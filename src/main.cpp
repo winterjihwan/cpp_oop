@@ -85,6 +85,8 @@ int main()
       // Handle text entry for position and size fields in StatusView
       if (event.type == sf::Event::TextEntered)
       {
+        std::cout << "Text entered: " << event.text.unicode << std::endl;
+        // Pass the entered character to StatusView for editing
         status_view.handleTextInput(static_cast<char>(event.text.unicode));
       }
 

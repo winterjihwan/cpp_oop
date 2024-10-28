@@ -10,26 +10,19 @@ class StatusView
 public:
     StatusView(sf::RenderWindow *window);
 
-    enum class FocusedField
-    {
-        None,
-        PosX,
-        PosY,
-        SizeX,
-        SizeY
-    };
+    enum class FocusedField { None, PosX, PosY, SizeX, SizeY };
 
-    void render(const Shape *shape);          // Display details of the selected shape
-    void clear();                             // Clear the displayed information
-    void handleTextInput(char inputChar);     // Handles keyboard input for entries
-    void applyChanges(Shape *shape);          // Apply the input field values to the shape
-    void setFocusedField(FocusedField field); // Set the focused field for input
+    void render(const Shape *shape);                // Display details of the selected shape
+    void clear();                                   // Clear the displayed information
+    void handleTextInput(char inputChar);           // Handles keyboard input for entries
+    void applyChanges(Shape *shape);                // Apply the input field values to the shape
+    void setFocusedField(FocusedField field);       // Set the focused field for input
 
     // Getter functions for bounds checking in main.cpp
-    const sf::Text &getPosXEntry() const { return posXEntryText; }
-    const sf::Text &getPosYEntry() const { return posYEntryText; }
-    const sf::Text &getSizeXEntry() const { return sizeXEntryText; }
-    const sf::Text &getSizeYEntry() const { return sizeYEntryText; }
+    const sf::Text& getPosXEntry() const { return posXEntryText; }
+    const sf::Text& getPosYEntry() const { return posYEntryText; }
+    const sf::Text& getSizeXEntry() const { return sizeXEntryText; }
+    const sf::Text& getSizeYEntry() const { return sizeYEntryText; }
 
 private:
     sf::RenderWindow *window;
