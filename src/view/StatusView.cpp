@@ -17,7 +17,7 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window)
     statusBar.setFillColor(sf::Color(220, 220, 220, 255)); // Light grey background color
 }
 
-// Method to render shape details
+// Render method to display status information
 void StatusView::render(const Shape *shape)
 {
     // Draw the status bar background
@@ -25,13 +25,14 @@ void StatusView::render(const Shape *shape)
 
     if (shape != nullptr)
     {
+        // Display selected shape's information
         std::ostringstream posStream, colorStream, sizeStream;
 
         // Format position text
         posStream << "Position: (" << shape->getPosition().x << ", " << shape->getPosition().y << ")";
         positionText = posStream.str();
 
-        // Format color text (assuming Shape has a getColor method)
+        // Format color text
         sf::Color shapeColor = shape->getColor();
         colorStream << "Color: (R: " << static_cast<int>(shapeColor.r)
                     << ", G: " << static_cast<int>(shapeColor.g)
@@ -47,9 +48,16 @@ void StatusView::render(const Shape *shape)
         displayText(colorText, {window->getSize().x * 0.8f + 10, 60});
         displayText(sizeText, {window->getSize().x * 0.8f + 10, 100});
     }
+    else
+    {
+        // If no shape is selected, display blank status view
+        displayText("Position: ", {window->getSize().x * 0.8f + 10, 20});
+        displayText("Color: ", {window->getSize().x * 0.8f + 10, 60});
+        displayText("Size: ", {window->getSize().x * 0.8f + 10, 100});
+    }
 }
 
-// Method to clear the status view
+// Clear the status view display by redrawing the blank status background
 void StatusView::clear()
 {
     // Draw the status bar background

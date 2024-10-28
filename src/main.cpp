@@ -62,23 +62,15 @@ int main()
       }
     }
 
-    // Render only if a change has occurred
-    if (shapeChanged || controller.isStatusViewDirty)
-    {
-      window.clear(sf::Color::White); // Clear the screen at the beginning of a new frame
+    window.clear(sf::Color::White);
 
-      // Render shapes
-      controller.render_shapes();
+    // Render shapes
+    controller.render_shapes();
 
-      // Only render status view if there is a change in selection or shape properties
-      if (controller.isStatusViewDirty)
-      {
-        status_view.render(controller.getSelectedShape());
-        controller.isStatusViewDirty = false; // Reset the dirty flag
-      }
+    // Always render status view, regardless of selection state
+    status_view.render(controller.getSelectedShape());
 
-      window.display(); // Display the updated frame
-    }
+    window.display();
   }
 
   return 0;
