@@ -14,9 +14,11 @@ public:
   // 생성자
   Canvas_view(sf::RenderWindow *window);
 
-  // Shape* 타입의 벡터를 받아들임
-  void render(std::vector<Shape *> shapes);
-  void update_view(std::vector<Shape *> shapes);
+  // Draws all shapes without clearing or displaying the window
+  void render(const std::vector<Shape *> &shapes);
+
+  // Updates the view with new positions of shapes without clearing or displaying
+  void update_view(const std::vector<Shape *> &shapes);
 };
 
 #endif // CANVAS_VIEW_H

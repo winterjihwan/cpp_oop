@@ -28,20 +28,21 @@ int main()
   while (window.isOpen())
   {
     sf::Event event;
+    bool shapeChanged = false; // Flag to track changes in shape positions or selection
+
+    // Process events
     while (window.pollEvent(event))
     {
       if (event.type == sf::Event::Closed)
         window.close();
 
       // Start dragging on mouse press
-      if (event.type == sf::Event::MouseButtonPressed)
+      if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
       {
-        if (event.mouseButton.button == sf::Mouse::Left)
-        {
-          initial_click_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-          controller.select_shape(initial_click_position);
-          is_dragging = controller.getSelectedShape() != nullptr;
-        }
+        initial_click_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+        controller.select_shape(initial_click_position);
+        is_dragging = controller.getSelectedShape() != nullptr;
+        shapeChanged = true; // Mark that a change occurred
       }
 
       // Move shape if dragging
@@ -49,27 +50,35 @@ int main()
       {
         sf::Vector2f new_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
         controller.move_shape(new_position);
-        controller.render_shapes(); // render_shapes() 호출하여 위치 업데이트 후 전체 렌더링
+        shapeChanged = true; // Mark that a change occurred
       }
 
       // Stop dragging on mouse release
-      if (event.type == sf::Event::MouseButtonReleased)
+      if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left)
       {
-        if (event.mouseButton.button == sf::Mouse::Left)
-        {
-          is_dragging = false;
-          controller.end_drag(); // Ensure dragging ends
-        }
+        is_dragging = false;
+        controller.end_drag(); // Ensure dragging ends
+        shapeChanged = true;   // Mark that a change occurred
       }
     }
 
-    window.clear(sf::Color::White);
+    // Render only if a change has occurred
+    if (shapeChanged || controller.isStatusViewDirty)
+    {
+      window.clear(sf::Color::White); // Clear the screen at the beginning of a new frame
 
-    controller.render_shapes(); // Ensure shapes are rendered only once per frame
+      // Render shapes
+      controller.render_shapes();
 
-    status_view.render(controller.getSelectedShape()); // Render status view
+      // Only render status view if there is a change in selection or shape properties
+      if (controller.isStatusViewDirty)
+      {
+        status_view.render(controller.getSelectedShape());
+        controller.isStatusViewDirty = false; // Reset the dirty flag
+      }
 
-    window.display();
+      window.display(); // Display the updated frame
+    }
   }
 
   return 0;

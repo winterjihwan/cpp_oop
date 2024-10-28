@@ -14,7 +14,7 @@ void Canvas_controller::create_rectangle()
 {
   Shape *new_shape = rectangle_factory->createShape(); // Shape* 타입 반환
   shapes.push_back(new_shape);
-  canvas_view->render(shapes); // 새로운 도형을 화면에 표시
+  isStatusViewDirty = true; // Mark status view for update
 }
 
 // 타원 생성
@@ -22,7 +22,7 @@ void Canvas_controller::create_ellipse()
 {
   Shape *new_shape = ellipse_factory->createShape(); // Shape* 타입 반환
   shapes.push_back(new_shape);
-  canvas_view->render(shapes);
+  isStatusViewDirty = true; // Mark status view for update
 }
 
 // 선 생성
@@ -30,54 +30,48 @@ void Canvas_controller::create_line()
 {
   Shape *new_shape = line_factory->createShape(); // Shape* 타입 반환
   shapes.push_back(new_shape);
-  canvas_view->render(shapes);
+  isStatusViewDirty = true; // Mark status view for update
 }
 
 // 도형 선택
 void Canvas_controller::select_shape(const sf::Vector2f &click_position)
 {
-  // 현재 선택된 도형이 있다면 해제
+  // Unselect currently selected shape
   if (selected_shape != nullptr)
   {
-    selected_shape->unhighlight(); // 이전 선택 해제
+    selected_shape->unhighlight();
     selected_shape = nullptr;
     is_selected = false;
   }
 
   for (auto &shape : shapes)
   {
-    // 각 도형 클래스의 isSelected() 메서드를 호출하여 선택 여부 확인
     if (shape->isSelected(click_position))
     {
       selected_shape = shape;
       is_selected = true;
-      selected_shape->highlight();         // 하이라이트 처리
-      status_view->render(selected_shape); // Display selected shape info in StatusView
-      isStatusViewDirty = true;            // Set to false after rendering
-      break;
+      selected_shape->highlight();
+      isStatusViewDirty = true; // Mark status view for update
+      return;
     }
   }
 
-  // 도형이 선택되지 않았을 경우 (배경 클릭)
+  // Clear status view if no shape was selected
   if (!is_selected)
   {
-    selected_shape = nullptr;
-    isStatusViewDirty = false;
+    isStatusViewDirty = true;
+    status_view->clear();
   }
-
-  canvas_view->render(shapes); // 변경 사항 반영
 }
 
 // 도형 이동 (마우스 이동 시 위치 변경)
 void Canvas_controller::move_shape(const sf::Vector2f &new_position)
 {
-  if (!selected_shape || !is_selected)
+  if (selected_shape && is_selected)
   {
-    return;
+    selected_shape->setPosition(new_position - offset);
+    isStatusViewDirty = true; // Mark status view for update
   }
-
-  // 선택된 도형의 위치 설정
-  selected_shape->setPosition(new_position - offset);
 }
 
 // 선택 해제
@@ -85,12 +79,11 @@ void Canvas_controller::deselect_shape()
 {
   if (selected_shape != nullptr)
   {
-    selected_shape->unhighlight(); // 선택된 도형의 하이라이트 해제
+    selected_shape->unhighlight();
     selected_shape = nullptr;
     is_selected = false;
     isStatusViewDirty = true;
-    status_view->clear();        //
-    canvas_view->render(shapes); // 선택 해제 후 렌더링
+    status_view->clear();
   }
 }
 
