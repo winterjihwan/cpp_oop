@@ -75,6 +75,12 @@ void Ellipse::unhighlight()
     ellipse.setOutlineColor(sf::Color::Black);
 }
 
+// getColor 메서드 정의
+sf::Color Ellipse::getColor() const
+{
+    return ellipse.getFillColor();
+}
+
 // draw 메서드 정의
 void Ellipse::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {

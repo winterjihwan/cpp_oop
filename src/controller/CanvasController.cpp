@@ -4,9 +4,10 @@
 Canvas_controller::Canvas_controller(Shape_factory *rectangle_factory,
                                      Shape_factory *ellipse_factory,
                                      Shape_factory *line_factory,
-                                     Canvas_view *canvas_view)
+                                     Canvas_view *canvas_view,
+                                     StatusView *statusView)
     : rectangle_factory{rectangle_factory}, ellipse_factory{ellipse_factory},
-      line_factory{line_factory}, canvas_view(canvas_view) {}
+      line_factory{line_factory}, canvas_view(canvas_view), status_view(statusView) {}
 
 // 사각형 생성
 void Canvas_controller::create_rectangle()
@@ -50,7 +51,9 @@ void Canvas_controller::select_shape(const sf::Vector2f &click_position)
     {
       selected_shape = shape;
       is_selected = true;
-      selected_shape->highlight(); // 하이라이트 처리
+      selected_shape->highlight();         // 하이라이트 처리
+      status_view->render(selected_shape); // Display selected shape info in StatusView
+      isStatusViewDirty = true;            // Set to false after rendering
       break;
     }
   }
@@ -59,6 +62,7 @@ void Canvas_controller::select_shape(const sf::Vector2f &click_position)
   if (!is_selected)
   {
     selected_shape = nullptr;
+    isStatusViewDirty = false;
   }
 
   canvas_view->render(shapes); // 변경 사항 반영
@@ -84,6 +88,8 @@ void Canvas_controller::deselect_shape()
     selected_shape->unhighlight(); // 선택된 도형의 하이라이트 해제
     selected_shape = nullptr;
     is_selected = false;
+    isStatusViewDirty = true;
+    status_view->clear();        //
     canvas_view->render(shapes); // 선택 해제 후 렌더링
   }
 }

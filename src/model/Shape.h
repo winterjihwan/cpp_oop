@@ -16,6 +16,10 @@ public:
     // 도형의 크기 반환
     virtual sf::Vector2f getSize() const = 0;
 
+    // 도형의 색상 반환
+
+    virtual sf::Color getColor() const = 0;
+
     // 도형의 위치 설정
     virtual void setPosition(const sf::Vector2f &position) = 0;
 

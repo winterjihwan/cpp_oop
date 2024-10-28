@@ -48,6 +48,12 @@ void Rectangle::unhighlight()
   shape.setOutlineColor(sf::Color::Black);
 }
 
+// New method: getColor
+sf::Color Rectangle::getColor() const
+{
+  return shape.getFillColor();
+}
+
 // draw 메서드 정의: 헤더 파일에 이미 선언된 메서드와 동일한 시그니처 사용
 void Rectangle::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {

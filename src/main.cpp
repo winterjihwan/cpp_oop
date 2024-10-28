@@ -8,13 +8,14 @@
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(800, 600), "Shape Factory Pattern Example");
+  sf::RenderWindow window(sf::VideoMode(1200, 800), "Shape Factory Pattern Example", sf::Style::Titlebar | sf::Style::Close);
 
   RectangleFactory rectangleFactory;
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
   Canvas_view canvas_view(&window);
-  Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory, &canvas_view);
+  StatusView status_view(&window);
+  Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory, &canvas_view, &status_view);
 
   // Create shapes
   controller.create_rectangle();
@@ -62,8 +63,12 @@ int main()
       }
     }
 
-    window.clear();
+    window.clear(sf::Color::White);
+
     controller.render_shapes(); // Ensure shapes are rendered only once per frame
+
+    status_view.render(controller.getSelectedShape()); // Render status view
+
     window.display();
   }
 

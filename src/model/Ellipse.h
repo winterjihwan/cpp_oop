@@ -40,6 +40,8 @@ public:
 
     void unhighlight() override;
 
+    sf::Color getColor() const override; // Added getColor
+
     // SFML Drawable의 draw 메서드 오버라이드
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };

@@ -24,6 +24,8 @@ public:
     void highlight() override;
     void unhighlight() override;
 
+    sf::Color getColor() const override; // Added getColor
+
     // SFML의 draw() 메서드 재정의
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };

@@ -72,6 +72,12 @@ void Line::unhighlight()
     line[1].color = sf::Color::Red;
 }
 
+// getColor 메서드 구현
+sf::Color Line::getColor() const
+{
+    return line[0].color;
+}
+
 // draw 메서드 구현
 void Line::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
