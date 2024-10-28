@@ -1,22 +1,24 @@
+#include "./controller/CanvasController.h"
+#include "./model/EllipseFactory.h"
+#include "./model/LineFactory.h"
+#include "./model/RectangleFactory.h"
+#include "./view/CanvasView.h"
+#include "./view/StatusView.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "RectangleFactory.h"
-#include "EllipseFactory.h"
-#include "LineFactory.h"
-#include "CanvasController.h"
-#include "CanvasView.h"
-#include "StatusView.h"
 
-int main()
-{
-  sf::RenderWindow window(sf::VideoMode(1200, 800), "Shape Factory Pattern Example", sf::Style::Titlebar | sf::Style::Close);
+int main() {
+  sf::RenderWindow window(sf::VideoMode(1200, 800),
+                          "Shape Factory Pattern Example",
+                          sf::Style::Titlebar | sf::Style::Close);
 
   RectangleFactory rectangleFactory;
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
   Canvas_view canvas_view(&window);
   StatusView status_view(&window);
-  Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory, &canvas_view, &status_view);
+  Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
+                               &canvas_view, &status_view);
 
   // Create initial shapes
   controller.create_rectangle();
@@ -26,26 +28,25 @@ int main()
   sf::Vector2f initial_click_position;
   bool is_dragging = false;
 
-  while (window.isOpen())
-  {
+  while (window.isOpen()) {
     sf::Event event;
-    bool shapeChanged = false; // Flag to track changes in shape positions or selection
+    bool shapeChanged =
+        false; // Flag to track changes in shape positions or selection
 
     // Process events
-    while (window.pollEvent(event))
-    {
+    while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed)
         window.close();
 
       // Handle mouse press for shape selection and drag start
-      if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
-      {
-        sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+      if (event.type == sf::Event::MouseButtonPressed &&
+          event.mouseButton.button == sf::Mouse::Left) {
+        sf::Vector2f mousePos =
+            window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
         // Check if click is within status view bounds
         float statusViewXStart = window.getSize().x * 0.7f;
-        if (mousePos.x < statusViewXStart)
-        {
+        if (mousePos.x < statusViewXStart) {
           // If clicking in the canvas area, proceed with selection/deselection
           initial_click_position = mousePos;
           controller.select_shape(initial_click_position);
@@ -56,45 +57,46 @@ int main()
         // Set focus to a specific entry field in StatusView if clicked
         if (status_view.getPosXEntry().getGlobalBounds().contains(mousePos))
           status_view.setFocusedField(StatusView::FocusedField::PosX);
-        else if (status_view.getPosYEntry().getGlobalBounds().contains(mousePos))
+        else if (status_view.getPosYEntry().getGlobalBounds().contains(
+                     mousePos))
           status_view.setFocusedField(StatusView::FocusedField::PosY);
-        else if (status_view.getSizeXEntry().getGlobalBounds().contains(mousePos))
+        else if (status_view.getSizeXEntry().getGlobalBounds().contains(
+                     mousePos))
           status_view.setFocusedField(StatusView::FocusedField::SizeX);
-        else if (status_view.getSizeYEntry().getGlobalBounds().contains(mousePos))
+        else if (status_view.getSizeYEntry().getGlobalBounds().contains(
+                     mousePos))
           status_view.setFocusedField(StatusView::FocusedField::SizeY);
         else
           status_view.setFocusedField(StatusView::FocusedField::None);
       }
 
       // Handle mouse movement for dragging
-      if (event.type == sf::Event::MouseMoved && is_dragging)
-      {
-        sf::Vector2f new_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+      if (event.type == sf::Event::MouseMoved && is_dragging) {
+        sf::Vector2f new_position =
+            window.mapPixelToCoords(sf::Mouse::getPosition(window));
         controller.move_shape(new_position);
         shapeChanged = true;
       }
 
       // Stop dragging on mouse release
-      if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left)
-      {
+      if (event.type == sf::Event::MouseButtonReleased &&
+          event.mouseButton.button == sf::Mouse::Left) {
         is_dragging = false;
         controller.end_drag();
         shapeChanged = true;
       }
 
       // Handle text entry for position and size fields in StatusView
-      if (event.type == sf::Event::TextEntered)
-      {
+      if (event.type == sf::Event::TextEntered) {
         std::cout << "Text entered: " << event.text.unicode << std::endl;
         // Pass the entered character to StatusView for editing
         status_view.handleTextInput(static_cast<char>(event.text.unicode));
       }
 
       // Apply changes on pressing Enter
-      if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter)
-      {
-        if (controller.getSelectedShape())
-        {
+      if (event.type == sf::Event::KeyPressed &&
+          event.key.code == sf::Keyboard::Enter) {
+        if (controller.getSelectedShape()) {
           status_view.applyChanges(controller.getSelectedShape());
           shapeChanged = true;
         }

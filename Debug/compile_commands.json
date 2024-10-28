@@ -1,0 +1,104 @@
+[
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/command/MoveCommand.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/command/MoveCommand.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/command/MoveCommand.cpp",
+    "output": "CMakeFiles/main.dir/src/command/MoveCommand.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/command/ResizeCommand.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/command/ResizeCommand.cpp",
+    "output": "CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/controller/CanvasController.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.cpp",
+    "output": "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/main.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/main.cpp",
+    "output": "CMakeFiles/main.dir/src/main.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/Canvas.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp",
+    "output": "CMakeFiles/main.dir/src/model/Canvas.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/Ellipse.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.cpp",
+    "output": "CMakeFiles/main.dir/src/model/Ellipse.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/EllipseFactory.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/EllipseFactory.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/EllipseFactory.cpp",
+    "output": "CMakeFiles/main.dir/src/model/EllipseFactory.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/Image.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/Image.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/Image.cpp",
+    "output": "CMakeFiles/main.dir/src/model/Image.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/Line.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/Line.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/Line.cpp",
+    "output": "CMakeFiles/main.dir/src/model/Line.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/LineFactory.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/LineFactory.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/LineFactory.cpp",
+    "output": "CMakeFiles/main.dir/src/model/LineFactory.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/Rectangle.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/Rectangle.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/Rectangle.cpp",
+    "output": "CMakeFiles/main.dir/src/model/Rectangle.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/RectangleFactory.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/RectangleFactory.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/RectangleFactory.cpp",
+    "output": "CMakeFiles/main.dir/src/model/RectangleFactory.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.cpp",
+    "output": "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/model/Text.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/Text.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/model/Text.cpp",
+    "output": "CMakeFiles/main.dir/src/model/Text.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/view/CanvasView.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp",
+    "output": "CMakeFiles/main.dir/src/view/CanvasView.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/view/ShapeView.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.cpp",
+    "output": "CMakeFiles/main.dir/src/view/ShapeView.cpp.o"
+  },
+  {
+    "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+    "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/view/StatusView.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp",
+    "file": "/Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp",
+    "output": "CMakeFiles/main.dir/src/view/StatusView.cpp.o"
+  }
+]

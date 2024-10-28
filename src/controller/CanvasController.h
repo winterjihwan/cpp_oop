@@ -1,19 +1,18 @@
 #ifndef CANVAS_CONTROLLER_H
 #define CANVAS_CONTROLLER_H
 
+#include "../model/Shape.h"
 #include "../model/ShapeFactory.h"
 #include "../view/CanvasView.h"
 #include "../view/StatusView.h"
-#include "../model/Shape.h"
-#include <vector>
 #include <SFML/Graphics.hpp>
+#include <vector>
 
 class Shape_factory;
 class Canvas_view;
 class StatusView;
 
-class Canvas_controller
-{
+class Canvas_controller {
 private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
@@ -30,7 +29,9 @@ private:
 
 public:
   // Constructor
-  Canvas_controller(Shape_factory *rectangle_factory, Shape_factory *ellipse_factory, Shape_factory *line_factory, Canvas_view *canvas_view, StatusView *status_view);
+  Canvas_controller(Shape_factory *rectangle_factory,
+                    Shape_factory *ellipse_factory, Shape_factory *line_factory,
+                    Canvas_view *canvas_view, StatusView *status_view);
 
   // Shape creation and management
   void create_rectangle();
@@ -39,19 +40,18 @@ public:
 #ifndef CANVAS_CONTROLLER_H
 #define CANVAS_CONTROLLER_H
 
+#include "../model/Shape.h"
 #include "../model/ShapeFactory.h"
 #include "../view/CanvasView.h"
 #include "../view/StatusView.h"
-#include "../model/Shape.h"
-#include <vector>
 #include <SFML/Graphics.hpp>
+#include <vector>
 
   class Shape_factory;
   class Canvas_view;
   class StatusView;
 
-  class Canvas_controller
-  {
+  class Canvas_controller {
   private:
     Shape_factory *rectangle_factory;
     Shape_factory *ellipse_factory;
@@ -68,7 +68,10 @@ public:
 
   public:
     // Constructor
-    Canvas_controller(Shape_factory *rectangle_factory, Shape_factory *ellipse_factory, Shape_factory *line_factory, Canvas_view *canvas_view, StatusView *status_view);
+    Canvas_controller(Shape_factory *rectangle_factory,
+                      Shape_factory *ellipse_factory,
+                      Shape_factory *line_factory, Canvas_view *canvas_view,
+                      StatusView *status_view);
 
     // Shape creation and management
     void create_rectangle();
@@ -86,7 +89,8 @@ public:
     // Getter for the selected shape
     Shape *getSelectedShape() const;
 
-    bool isStatusViewDirty = true; // Set to true initially to render an empty status view
+    bool isStatusViewDirty =
+        true; // Set to true initially to render an empty status view
 
     // Render all shapes
     void render_shapes();
@@ -105,7 +109,8 @@ public:
   // Getter for the selected shape
   Shape *getSelectedShape() const;
 
-  bool isStatusViewDirty = true; // Set to true initially because empty statusview should be displayed
+  bool isStatusViewDirty = true; // Set to true initially because empty
+                                 // statusview should be displayed
 
   // Render all shapes
   void render_shapes();
