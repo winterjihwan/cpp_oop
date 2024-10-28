@@ -5,6 +5,7 @@
 #include "LineFactory.h"
 #include "CanvasController.h"
 #include "CanvasView.h"
+#include "StatusView.h"
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
   StatusView status_view(&window);
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory, &canvas_view, &status_view);
 
-  // Create shapes
+  // Create initial shapes
   controller.create_rectangle();
   controller.create_ellipse();
   controller.create_line();
@@ -36,40 +37,78 @@ int main()
       if (event.type == sf::Event::Closed)
         window.close();
 
-      // Start dragging on mouse press
+      // Handle mouse press for shape selection and drag start
       if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
       {
-        initial_click_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-        controller.select_shape(initial_click_position);
-        is_dragging = controller.getSelectedShape() != nullptr;
-        shapeChanged = true; // Mark that a change occurred
+        sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+        // Check if click is within status view bounds
+        float statusViewXStart = window.getSize().x * 0.7f;
+        if (mousePos.x < statusViewXStart)
+        {
+          // If clicking in the canvas area, proceed with selection/deselection
+          initial_click_position = mousePos;
+          controller.select_shape(initial_click_position);
+          is_dragging = controller.getSelectedShape() != nullptr;
+          shapeChanged = true;
+        }
+
+        // Set focus to a specific entry field in StatusView if clicked
+        if (status_view.getPosXEntry().getGlobalBounds().contains(mousePos))
+          status_view.setFocusedField(StatusView::FocusedField::PosX);
+        else if (status_view.getPosYEntry().getGlobalBounds().contains(mousePos))
+          status_view.setFocusedField(StatusView::FocusedField::PosY);
+        else if (status_view.getSizeXEntry().getGlobalBounds().contains(mousePos))
+          status_view.setFocusedField(StatusView::FocusedField::SizeX);
+        else if (status_view.getSizeYEntry().getGlobalBounds().contains(mousePos))
+          status_view.setFocusedField(StatusView::FocusedField::SizeY);
+        else
+          status_view.setFocusedField(StatusView::FocusedField::None);
       }
 
-      // Move shape if dragging
+      // Handle mouse movement for dragging
       if (event.type == sf::Event::MouseMoved && is_dragging)
       {
         sf::Vector2f new_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
         controller.move_shape(new_position);
-        shapeChanged = true; // Mark that a change occurred
+        shapeChanged = true;
       }
 
       // Stop dragging on mouse release
       if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left)
       {
         is_dragging = false;
-        controller.end_drag(); // Ensure dragging ends
-        shapeChanged = true;   // Mark that a change occurred
+        controller.end_drag();
+        shapeChanged = true;
+      }
+
+      // Handle text entry for position and size fields in StatusView
+      if (event.type == sf::Event::TextEntered)
+      {
+        status_view.handleTextInput(static_cast<char>(event.text.unicode));
+      }
+
+      // Apply changes on pressing Enter
+      if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter)
+      {
+        if (controller.getSelectedShape())
+        {
+          status_view.applyChanges(controller.getSelectedShape());
+          shapeChanged = true;
+        }
       }
     }
 
+    // Clear the window at the start of each frame
     window.clear(sf::Color::White);
 
-    // Render shapes
+    // Render shapes in the canvas view
     controller.render_shapes();
 
-    // Always render status view, regardless of selection state
+    // Render the status view, which will always display on the right
     status_view.render(controller.getSelectedShape());
 
+    // Update the display with all drawn elements
     window.display();
   }
 
