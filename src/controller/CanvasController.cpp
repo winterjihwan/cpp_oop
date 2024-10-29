@@ -19,26 +19,48 @@ void Canvas_controller::handleSidebarClick(const sf::Vector2f &clickPosition) {
   }
 }
 
-void Canvas_controller::create_rectangle() {
-  Shape *new_shape = rectangle_factory->createShape();
+void Canvas_controller::create_shape(const std::string &shapeType,
+                                     const sf::Vector2f &position) {
+  if (shapeType.empty())
+    return; // No shape type selected, do nothing
+
+  Shape *new_shape = nullptr;
+  if (shapeType == "Rectangle") {
+    new_shape = rectangle_factory->createShape(position);
+  } else if (shapeType == "Ellipse") {
+    new_shape = ellipse_factory->createShape(position);
+  } else if (shapeType == "Line") {
+    new_shape = line_factory->createShape(position);
+  } else if (shapeType == "Text") {
+    new_shape = text_factory->createShape(position);
+  }
+
+  if (new_shape) {
+    shapes.push_back(new_shape);
+    canvas_view->render(shapes);
+  }
+}
+
+void Canvas_controller::create_rectangle(const sf::Vector2f &position) {
+  Shape *new_shape = rectangle_factory->createShape(position);
   shapes.push_back(new_shape);
   isStatusViewDirty = true;
 }
 
-void Canvas_controller::create_ellipse() {
-  Shape *new_shape = ellipse_factory->createShape();
+void Canvas_controller::create_ellipse(const sf::Vector2f &position) {
+  Shape *new_shape = ellipse_factory->createShape(position);
   shapes.push_back(new_shape);
   isStatusViewDirty = true;
 }
 
-void Canvas_controller::create_line() {
-  Shape *new_shape = line_factory->createShape();
+void Canvas_controller::create_line(const sf::Vector2f &position) {
+  Shape *new_shape = line_factory->createShape(position);
   shapes.push_back(new_shape);
   isStatusViewDirty = true;
 }
 
-void Canvas_controller::create_text() {
-  Shape *new_shape = text_factory->createShape();
+void Canvas_controller::create_text(const sf::Vector2f &position) {
+  Shape *new_shape = text_factory->createShape(position);
   shapes.push_back(new_shape);
   isStatusViewDirty = true;
 }
@@ -84,6 +106,10 @@ void Canvas_controller::deselect_shape() {
 }
 
 Shape *Canvas_controller::getSelectedShape() const { return selected_shape; }
+
+std::string Canvas_controller::getSelectedShapeType() const {
+  return selectedShapeType;
+}
 
 void Canvas_controller::render_shapes() { canvas_view->render(shapes); }
 

@@ -32,24 +32,19 @@ void Sidebar::createPreviews() {
   LineFactory lineFactory;
   TextFactory textFactory;
 
-  // Create a rectangle preview shape
-  std::unique_ptr<Shape> rectanglePreview(rectangleFactory.createShape());
-  /*rectanglePreview->setSize({30.0f, 20.0f});*/
+  std::unique_ptr<Shape> rectanglePreview(
+      rectangleFactory.createShape({10.0f, 10.0f}));
   previewShapes.push_back(std::move(rectanglePreview));
 
-  // Create an ellipse preview shape
-  std::unique_ptr<Shape> ellipsePreview(ellipseFactory.createShape());
-  /*ellipsePreview->setSize({30.0f, 20.0f});*/
+  std::unique_ptr<Shape> ellipsePreview(
+      ellipseFactory.createShape({10.0f, 70.0f}));
+  ellipsePreview->setSize({30.0f, 20.0f});
   previewShapes.push_back(std::move(ellipsePreview));
 
-  // Create a line preview shape
-  std::unique_ptr<Shape> linePreview(lineFactory.createShape());
-  /*linePreview->setSize({30.0f, 2.0f});*/
+  std::unique_ptr<Shape> linePreview(lineFactory.createShape({10.0f, 130.0f}));
   previewShapes.push_back(std::move(linePreview));
 
-  // Create a text preview shape
-  std::unique_ptr<Shape> textPreview(textFactory.createShape());
-  /*textPreview->setSize({30.0f, 20.0f});*/
+  std::unique_ptr<Shape> textPreview(textFactory.createShape({10.0f, 190.0f}));
   previewShapes.push_back(std::move(textPreview));
 }
 

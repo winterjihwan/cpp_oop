@@ -1,7 +1,6 @@
 CMakeFiles/main.dir/src/command/MoveCommand.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/command/MoveCommand.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/command/MoveCommand.h \
-  /Users/anjihwan/cpp/cpp_oop/src/command/Command.h \
   /Users/anjihwan/cpp/cpp_oop/src/command/../model/Shape.h \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
@@ -496,4 +495,5 @@ CMakeFiles/main.dir/src/command/MoveCommand.cpp.o: \
   /usr/local/include/SFML/Graphics/Glsl.inl \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
-  /usr/local/include/SFML/Graphics/VertexBuffer.hpp
+  /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
+  /Users/anjihwan/cpp/cpp_oop/src/command/Command.h

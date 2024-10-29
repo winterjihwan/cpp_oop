@@ -40,10 +40,12 @@ public:
 
   void handleSidebarClick(const sf::Vector2f &clickPosition);
 
-  void create_rectangle();
-  void create_ellipse();
-  void create_line();
-  void create_text();
+  void create_shape(const std::string &shapeType, const sf::Vector2f &position);
+
+  void create_rectangle(const sf::Vector2f &position);
+  void create_ellipse(const sf::Vector2f &position);
+  void create_line(const sf::Vector2f &position);
+  void create_text(const sf::Vector2f &position);
 
   void select_shape(const sf::Vector2f &click_position);
   void move_shape(const sf::Vector2f &new_position);
@@ -52,6 +54,7 @@ public:
   void end_drag();
 
   Shape *getSelectedShape() const;
+  std::string getSelectedShapeType() const;
 
   bool isStatusViewDirty = true;
 

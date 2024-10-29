@@ -7452,7 +7452,6 @@ CMakeFiles/main.dir/src/view/SideBar.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view
   /Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/Text.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.h \
-  /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.h \
   /usr/local/include/SFML/Config.hpp \
   /usr/local/include/SFML/Graphics.hpp \
@@ -8033,8 +8032,6 @@ CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/v
   /usr/local/include/SFML/Window/WindowHandle.hpp \
   /usr/local/include/SFML/Window/WindowStyle.hpp
 
-
-/Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp:
 
 /Users/anjihwan/cpp/cpp_oop/src/view/SideBar.cpp:
 

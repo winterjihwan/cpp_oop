@@ -24,13 +24,9 @@ int main() {
                                &textFactory, &canvas_view, &status_view,
                                &sidebar);
 
-  controller.create_rectangle();
-  controller.create_ellipse();
-  controller.create_line();
-  controller.create_text();
-
   sf::Vector2f initial_click_position;
   bool is_dragging = false;
+  bool shouldCreateShape = false; // New flag to track creation
 
   while (window.isOpen()) {
     sf::Event event;
@@ -45,13 +41,24 @@ int main() {
         sf::Vector2f mousePos =
             window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
+        // Check if click is within the sidebar area
         if (mousePos.x <= 200.0f) {
           controller.handleSidebarClick(mousePos);
+          shouldCreateShape = true; // Set flag to create shape on next click
         } else {
-          initial_click_position = mousePos;
-          controller.select_shape(initial_click_position);
-          is_dragging = controller.getSelectedShape() != nullptr;
-          shapeChanged = true;
+          // Check if we should create a new shape or select an existing one
+          if (shouldCreateShape) {
+            // Create shape at clicked position
+            controller.create_shape(controller.getSelectedShapeType(),
+                                    mousePos);
+            shouldCreateShape = false; // Reset flag after creation
+          } else {
+            // Select shape on canvas
+            initial_click_position = mousePos;
+            controller.select_shape(initial_click_position);
+            is_dragging = controller.getSelectedShape() != nullptr;
+            shapeChanged = true;
+          }
         }
 
         // StatusView interactions
