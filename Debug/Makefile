@@ -489,29 +489,29 @@ src/view/CanvasView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/CanvasView.cpp.s
 .PHONY : src/view/CanvasView.cpp.s
 
-src/view/Sidebar.o: src/view/Sidebar.cpp.o
-.PHONY : src/view/Sidebar.o
+src/view/SideBar.o: src/view/SideBar.cpp.o
+.PHONY : src/view/SideBar.o
 
 # target to build an object file
-src/view/Sidebar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/Sidebar.cpp.o
-.PHONY : src/view/Sidebar.cpp.o
+src/view/SideBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/SideBar.cpp.o
+.PHONY : src/view/SideBar.cpp.o
 
-src/view/Sidebar.i: src/view/Sidebar.cpp.i
-.PHONY : src/view/Sidebar.i
+src/view/SideBar.i: src/view/SideBar.cpp.i
+.PHONY : src/view/SideBar.i
 
 # target to preprocess a source file
-src/view/Sidebar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/Sidebar.cpp.i
-.PHONY : src/view/Sidebar.cpp.i
+src/view/SideBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/SideBar.cpp.i
+.PHONY : src/view/SideBar.cpp.i
 
-src/view/Sidebar.s: src/view/Sidebar.cpp.s
-.PHONY : src/view/Sidebar.s
+src/view/SideBar.s: src/view/SideBar.cpp.s
+.PHONY : src/view/SideBar.s
 
 # target to generate assembly for a file
-src/view/Sidebar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/Sidebar.cpp.s
-.PHONY : src/view/Sidebar.cpp.s
+src/view/SideBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/SideBar.cpp.s
+.PHONY : src/view/SideBar.cpp.s
 
 src/view/StatusView.o: src/view/StatusView.cpp.o
 .PHONY : src/view/StatusView.o
@@ -591,9 +591,9 @@ help:
 	@echo "... src/view/CanvasView.o"
 	@echo "... src/view/CanvasView.i"
 	@echo "... src/view/CanvasView.s"
-	@echo "... src/view/Sidebar.o"
-	@echo "... src/view/Sidebar.i"
-	@echo "... src/view/Sidebar.s"
+	@echo "... src/view/SideBar.o"
+	@echo "... src/view/SideBar.i"
+	@echo "... src/view/SideBar.s"
 	@echo "... src/view/StatusView.o"
 	@echo "... src/view/StatusView.i"
 	@echo "... src/view/StatusView.s"

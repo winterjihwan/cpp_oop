@@ -6,7 +6,7 @@
 
 class EllipseFactory : public Shape_factory {
 public:
-  Shape *createShape() override;
+  Shape *createShape(const sf::Vector2f &position) override;
 };
 
 #endif // ELLIPSE_FACTORY_H

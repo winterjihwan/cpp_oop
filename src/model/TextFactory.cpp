@@ -1,5 +1,5 @@
 #include "TextFactory.h"
 
-Shape *TextFactory::createShape() {
-  return new Text(10.0f, 30.0f, "Hello world!");
+Shape *TextFactory::createShape(const sf::Vector2f &position) {
+  return new Text(position.x, position.y, "Hello world!");
 }

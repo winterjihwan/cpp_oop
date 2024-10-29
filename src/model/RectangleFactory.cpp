@@ -1,5 +1,5 @@
 #include "RectangleFactory.h"
 
-Shape *RectangleFactory::createShape() {
-  return new Rectangle(100.0f, 100.0f, 50.0f, 30.0f);
+Shape *RectangleFactory::createShape(const sf::Vector2f &position) {
+  return new Rectangle(position.x, position.y, 50.0f, 30.0f);
 }

@@ -6,7 +6,7 @@
 
 class LineFactory : public Shape_factory {
 public:
-  Shape *createShape() override;
+  Shape *createShape(const sf::Vector2f &position) override;
 };
 
 #endif // LINE_FACTORY_H

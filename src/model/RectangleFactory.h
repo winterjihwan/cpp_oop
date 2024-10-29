@@ -7,7 +7,7 @@
 
 class RectangleFactory : public Shape_factory {
 public:
-  Shape *createShape() override;
+  Shape *createShape(const sf::Vector2f &position) override;
 };
 
 #endif // RECTANGLE_FACTORY_H

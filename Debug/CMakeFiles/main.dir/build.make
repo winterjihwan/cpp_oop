@@ -279,19 +279,19 @@ CMakeFiles/main.dir/src/view/CanvasView.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/view/CanvasView.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp -o CMakeFiles/main.dir/src/view/CanvasView.cpp.s
 
-CMakeFiles/main.dir/src/view/Sidebar.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/view/Sidebar.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp
-CMakeFiles/main.dir/src/view/Sidebar.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/src/view/Sidebar.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/view/Sidebar.cpp.o -MF CMakeFiles/main.dir/src/view/Sidebar.cpp.o.d -o CMakeFiles/main.dir/src/view/Sidebar.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp
+CMakeFiles/main.dir/src/view/SideBar.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/view/SideBar.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/SideBar.cpp
+CMakeFiles/main.dir/src/view/SideBar.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/src/view/SideBar.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/view/SideBar.cpp.o -MF CMakeFiles/main.dir/src/view/SideBar.cpp.o.d -o CMakeFiles/main.dir/src/view/SideBar.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/SideBar.cpp
 
-CMakeFiles/main.dir/src/view/Sidebar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/view/Sidebar.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp > CMakeFiles/main.dir/src/view/Sidebar.cpp.i
+CMakeFiles/main.dir/src/view/SideBar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/view/SideBar.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anjihwan/cpp/cpp_oop/src/view/SideBar.cpp > CMakeFiles/main.dir/src/view/SideBar.cpp.i
 
-CMakeFiles/main.dir/src/view/Sidebar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/view/Sidebar.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp -o CMakeFiles/main.dir/src/view/Sidebar.cpp.s
+CMakeFiles/main.dir/src/view/SideBar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/view/SideBar.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anjihwan/cpp/cpp_oop/src/view/SideBar.cpp -o CMakeFiles/main.dir/src/view/SideBar.cpp.s
 
 CMakeFiles/main.dir/src/view/StatusView.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp
@@ -324,7 +324,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/model/Text.cpp.o" \
 "CMakeFiles/main.dir/src/model/TextFactory.cpp.o" \
 "CMakeFiles/main.dir/src/view/CanvasView.cpp.o" \
-"CMakeFiles/main.dir/src/view/Sidebar.cpp.o" \
+"CMakeFiles/main.dir/src/view/SideBar.cpp.o" \
 "CMakeFiles/main.dir/src/view/StatusView.cpp.o"
 
 # External object files for target main
@@ -345,7 +345,7 @@ main: CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o
 main: CMakeFiles/main.dir/src/model/Text.cpp.o
 main: CMakeFiles/main.dir/src/model/TextFactory.cpp.o
 main: CMakeFiles/main.dir/src/view/CanvasView.cpp.o
-main: CMakeFiles/main.dir/src/view/Sidebar.cpp.o
+main: CMakeFiles/main.dir/src/view/SideBar.cpp.o
 main: CMakeFiles/main.dir/src/view/StatusView.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libsfml-graphics.2.6.1.dylib
