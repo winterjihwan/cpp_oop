@@ -2,4 +2,4 @@
 CMakelists.txt
 main.exe
 build/
-Debug/
+Debug

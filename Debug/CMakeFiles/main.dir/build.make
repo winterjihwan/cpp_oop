@@ -251,10 +251,24 @@ CMakeFiles/main.dir/src/model/Text.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/model/Text.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anjihwan/cpp/cpp_oop/src/model/Text.cpp -o CMakeFiles/main.dir/src/model/Text.cpp.s
 
+CMakeFiles/main.dir/src/model/TextFactory.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/model/TextFactory.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.cpp
+CMakeFiles/main.dir/src/model/TextFactory.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/src/model/TextFactory.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/model/TextFactory.cpp.o -MF CMakeFiles/main.dir/src/model/TextFactory.cpp.o.d -o CMakeFiles/main.dir/src/model/TextFactory.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.cpp
+
+CMakeFiles/main.dir/src/model/TextFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/model/TextFactory.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.cpp > CMakeFiles/main.dir/src/model/TextFactory.cpp.i
+
+CMakeFiles/main.dir/src/model/TextFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/model/TextFactory.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.cpp -o CMakeFiles/main.dir/src/model/TextFactory.cpp.s
+
 CMakeFiles/main.dir/src/view/CanvasView.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/view/CanvasView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp
 CMakeFiles/main.dir/src/view/CanvasView.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/src/view/CanvasView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/src/view/CanvasView.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/view/CanvasView.cpp.o -MF CMakeFiles/main.dir/src/view/CanvasView.cpp.o.d -o CMakeFiles/main.dir/src/view/CanvasView.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp
 
 CMakeFiles/main.dir/src/view/CanvasView.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/main.dir/src/view/CanvasView.cpp.s: cmake_force
 CMakeFiles/main.dir/src/view/StatusView.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp
 CMakeFiles/main.dir/src/view/StatusView.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/src/view/StatusView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/src/view/StatusView.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/view/StatusView.cpp.o -MF CMakeFiles/main.dir/src/view/StatusView.cpp.o.d -o CMakeFiles/main.dir/src/view/StatusView.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp
 
 CMakeFiles/main.dir/src/view/StatusView.cpp.i: cmake_force
@@ -294,6 +308,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/model/RectangleFactory.cpp.o" \
 "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o" \
 "CMakeFiles/main.dir/src/model/Text.cpp.o" \
+"CMakeFiles/main.dir/src/model/TextFactory.cpp.o" \
 "CMakeFiles/main.dir/src/view/CanvasView.cpp.o" \
 "CMakeFiles/main.dir/src/view/StatusView.cpp.o"
 
@@ -313,6 +328,7 @@ main: CMakeFiles/main.dir/src/model/Rectangle.cpp.o
 main: CMakeFiles/main.dir/src/model/RectangleFactory.cpp.o
 main: CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o
 main: CMakeFiles/main.dir/src/model/Text.cpp.o
+main: CMakeFiles/main.dir/src/model/TextFactory.cpp.o
 main: CMakeFiles/main.dir/src/view/CanvasView.cpp.o
 main: CMakeFiles/main.dir/src/view/StatusView.cpp.o
 main: CMakeFiles/main.dir/build.make
@@ -320,7 +336,7 @@ main: /usr/local/lib/libsfml-graphics.2.6.1.dylib
 main: /usr/local/lib/libsfml-window.2.6.1.dylib
 main: /usr/local/lib/libsfml-system.2.6.1.dylib
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/anjihwan/cpp/cpp_oop/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

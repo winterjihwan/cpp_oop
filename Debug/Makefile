@@ -441,6 +441,30 @@ src/model/Text.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/Text.cpp.s
 .PHONY : src/model/Text.cpp.s
 
+src/model/TextFactory.o: src/model/TextFactory.cpp.o
+.PHONY : src/model/TextFactory.o
+
+# target to build an object file
+src/model/TextFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/TextFactory.cpp.o
+.PHONY : src/model/TextFactory.cpp.o
+
+src/model/TextFactory.i: src/model/TextFactory.cpp.i
+.PHONY : src/model/TextFactory.i
+
+# target to preprocess a source file
+src/model/TextFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/TextFactory.cpp.i
+.PHONY : src/model/TextFactory.cpp.i
+
+src/model/TextFactory.s: src/model/TextFactory.cpp.s
+.PHONY : src/model/TextFactory.s
+
+# target to generate assembly for a file
+src/model/TextFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/TextFactory.cpp.s
+.PHONY : src/model/TextFactory.cpp.s
+
 src/view/CanvasView.o: src/view/CanvasView.cpp.o
 .PHONY : src/view/CanvasView.o
 
@@ -537,6 +561,9 @@ help:
 	@echo "... src/model/Text.o"
 	@echo "... src/model/Text.i"
 	@echo "... src/model/Text.s"
+	@echo "... src/model/TextFactory.o"
+	@echo "... src/model/TextFactory.i"
+	@echo "... src/model/TextFactory.s"
 	@echo "... src/view/CanvasView.o"
 	@echo "... src/view/CanvasView.i"
 	@echo "... src/view/CanvasView.s"

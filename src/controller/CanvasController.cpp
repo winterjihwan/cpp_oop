@@ -7,8 +7,8 @@ Canvas_controller::Canvas_controller(Shape_factory *rectangle_factory,
                                      Canvas_view *canvas_view,
                                      StatusView *statusView)
     : rectangle_factory{rectangle_factory}, ellipse_factory{ellipse_factory},
-      line_factory{line_factory}, canvas_view(canvas_view),
-      status_view(statusView) {}
+      line_factory{line_factory}, text_factory{text_factory},
+      canvas_view(canvas_view), status_view(statusView) {}
 
 void Canvas_controller::create_rectangle() {
   Shape *new_shape = rectangle_factory->createShape();

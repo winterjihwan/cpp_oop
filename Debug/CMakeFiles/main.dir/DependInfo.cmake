@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/anjihwan/cpp/cpp_oop/src/model/RectangleFactory.cpp" "CMakeFiles/main.dir/src/model/RectangleFactory.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/RectangleFactory.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.cpp" "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/Text.cpp" "CMakeFiles/main.dir/src/model/Text.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Text.cpp.o.d"
+  "/Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.cpp" "CMakeFiles/main.dir/src/model/TextFactory.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/TextFactory.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp" "CMakeFiles/main.dir/src/view/CanvasView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/CanvasView.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp" "CMakeFiles/main.dir/src/view/StatusView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/StatusView.cpp.o.d"
   )

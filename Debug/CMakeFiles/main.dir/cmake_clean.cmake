@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o.d"
   "CMakeFiles/main.dir/src/model/Text.cpp.o"
   "CMakeFiles/main.dir/src/model/Text.cpp.o.d"
+  "CMakeFiles/main.dir/src/model/TextFactory.cpp.o"
+  "CMakeFiles/main.dir/src/model/TextFactory.cpp.o.d"
   "CMakeFiles/main.dir/src/view/CanvasView.cpp.o"
   "CMakeFiles/main.dir/src/view/CanvasView.cpp.o.d"
   "CMakeFiles/main.dir/src/view/StatusView.cpp.o"

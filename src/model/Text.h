@@ -5,17 +5,15 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-// Text class definition inheriting from Shape
 class Text : public Shape {
 private:
-  sf::Text text; // SFML's text object
-  sf::Font font; // SFML font for rendering the text
+  sf::Text text;
+  sf::Font font;
 
 public:
   Text(float x, float y, const std::string &content,
        unsigned int characterSize = 24);
 
-  // Override methods from Shape class
   bool isSelected(const sf::Vector2f &point) const override;
   void setPosition(const sf::Vector2f &position) override;
   sf::Vector2f getPosition() const override;
@@ -28,7 +26,6 @@ public:
   void highlight() override;
   void unhighlight() override;
 
-  // Override draw method from SFML's Drawable class
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
   sf::Color getColor() const override;
 };
