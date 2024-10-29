@@ -20,7 +20,6 @@ int main() {
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
                                &canvas_view, &status_view);
 
-  // Create initial shapes
   controller.create_rectangle();
   controller.create_ellipse();
   controller.create_line();

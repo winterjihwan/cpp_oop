@@ -3,7 +3,6 @@
 #include <sstream>
 #include <stdexcept>
 
-// Constructor
 StatusView::StatusView(sf::RenderWindow *window) : window(window) {
   if (!font.loadFromFile("FiraCode-Regular.ttf"))
     throw std::runtime_error("Failed to load font");
