@@ -1,6 +1,5 @@
 #include "Text.h"
 
-// Constructor definition
 Text::Text(float x, float y, const std::string &content,
            unsigned int characterSize) {
   if (!font.loadFromFile("FiraCode-Regular.ttf")) {
@@ -11,7 +10,7 @@ Text::Text(float x, float y, const std::string &content,
   text.setString(content);
   text.setCharacterSize(characterSize);
   text.setPosition(x, y);
-  text.setFillColor(sf::Color::Black); // Default color
+  text.setFillColor(sf::Color::Black);
 }
 
 bool Text::isSelected(const sf::Vector2f &point) const {
@@ -25,7 +24,6 @@ void Text::setPosition(const sf::Vector2f &position) {
 sf::Vector2f Text::getPosition() const { return text.getPosition(); }
 
 void Text::setSize(const sf::Vector2f &size) {
-  // Approximate scaling for text size adjustment.
   text.setScale(size.x / text.getLocalBounds().width,
                 size.y / text.getLocalBounds().height);
 }

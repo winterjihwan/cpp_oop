@@ -7,13 +7,11 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window) {
   if (!font.loadFromFile("FiraCode-Regular.ttf"))
     throw std::runtime_error("Failed to load font");
 
-  // Set the status bar to 30% of the main window's width
   statusBar.setSize(
       {window->getSize().x * 0.3f, static_cast<float>(window->getSize().y)});
   statusBar.setPosition(window->getSize().x * 0.7f, 0);
   statusBar.setFillColor(sf::Color(220, 220, 220, 255));
 
-  // Initialize labels
   positionLabel.setFont(font);
   positionLabel.setString("Position:");
   positionLabel.setCharacterSize(14);
@@ -32,7 +30,6 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window) {
   sizeLabel.setFillColor(sf::Color::Black);
   sizeLabel.setPosition(window->getSize().x * 0.7f + 10, 100);
 
-  // Initialize editable entry texts for position and size
   posXEntryText.setFont(font);
   posYEntryText.setFont(font);
   sizeXEntryText.setFont(font);
@@ -60,27 +57,23 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window) {
 }
 
 void StatusView::render(const Shape *shape) {
-  // Draw the background status bar and labels
+
   window->draw(statusBar);
   window->draw(positionLabel);
   window->draw(colorLabel);
   window->draw(sizeLabel);
 
-  // If there’s a shape, update display text only if not focused
   if (shape != nullptr) {
-    // Only call updateEntryFields if no field is currently focused to prevent
-    // overwriting user edits
+
     if (focusedField == FocusedField::None) {
       updateEntryFields(shape);
     }
 
-    // Update the sf::Text objects with the latest entry values
     posXEntryText.setString(posXEntryValue);
     posYEntryText.setString(posYEntryValue);
     sizeXEntryText.setString(sizeXEntryValue);
     sizeYEntryText.setString(sizeYEntryValue);
 
-    // Set colors based on focus to indicate active editing
     posXEntryText.setFillColor(focusedField == FocusedField::PosX
                                    ? sf::Color::Blue
                                    : sf::Color::Black);
@@ -94,13 +87,11 @@ void StatusView::render(const Shape *shape) {
                                     ? sf::Color::Blue
                                     : sf::Color::Black);
 
-    // Draw updated text on the window
     window->draw(posXEntryText);
     window->draw(posYEntryText);
     window->draw(sizeXEntryText);
     window->draw(sizeYEntryText);
 
-    // Set and display color information
     sf::Color shapeColor = shape->getColor();
     std::ostringstream colorStream;
     colorStream << "R: " << static_cast<int>(shapeColor.r)
@@ -109,12 +100,11 @@ void StatusView::render(const Shape *shape) {
     colorValue.setString(colorStream.str());
     window->draw(colorValue);
   } else {
-    // Clear the status view if no shape is selected
+
     clear();
   }
 }
 
-// Clear method
 void StatusView::clear() {
   posXEntryValue.clear();
   posYEntryValue.clear();
@@ -123,7 +113,6 @@ void StatusView::clear() {
   colorValue.setString("");
 }
 
-// Update entry fields with the shape's current position and size
 void StatusView::updateEntryFields(const Shape *shape) {
   posXEntryValue = std::to_string(static_cast<int>(shape->getPosition().x));
   posYEntryValue = std::to_string(static_cast<int>(shape->getPosition().y));
@@ -131,7 +120,6 @@ void StatusView::updateEntryFields(const Shape *shape) {
   sizeYEntryValue = std::to_string(static_cast<int>(shape->getSize().y));
 }
 
-// Set focus on a specific field
 void StatusView::setFocusedField(FocusedField field) { focusedField = field; }
 
 void StatusView::handleTextInput(char inputChar) {
@@ -155,22 +143,19 @@ void StatusView::handleTextInput(char inputChar) {
     return;
   }
 
-  if (inputChar == '\b' && currentEntry != nullptr) // Handle backspace
-  {
+  if (inputChar == '\b' && currentEntry != nullptr) {
     if (!currentEntry->empty()) {
       currentEntry->pop_back();
       std::cout << "Backspace pressed. Updated field: " << *currentEntry
                 << std::endl;
     }
-  } else if (std::isdigit(inputChar)) // Only allow digits
-  {
+  } else if (std::isdigit(inputChar)) {
     *currentEntry += inputChar;
     std::cout << "Digit entered: " << inputChar
               << " Updated field: " << *currentEntry << std::endl;
   }
 }
 
-// Apply changes to shape
 void StatusView::applyChanges(Shape *shape) {
   if (shape == nullptr)
     return;

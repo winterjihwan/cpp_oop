@@ -22,7 +22,7 @@ void Canvas_controller::handleSidebarClick(const sf::Vector2f &clickPosition) {
 void Canvas_controller::create_shape(const std::string &shapeType,
                                      const sf::Vector2f &position) {
   if (shapeType.empty())
-    return; // No shape type selected, do nothing
+    return;
 
   Shape *new_shape = nullptr;
   if (shapeType == "Rectangle") {
