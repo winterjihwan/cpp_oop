@@ -31,8 +31,7 @@ int main() {
 
   while (window.isOpen()) {
     sf::Event event;
-    bool shapeChanged =
-        false; // Flag to track changes in shape positions or selection
+    bool shapeChanged = false;
 
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed)
@@ -43,17 +42,14 @@ int main() {
         sf::Vector2f mousePos =
             window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
-        // Check if click is within status view bounds
         float statusViewXStart = window.getSize().x * 0.7f;
         if (mousePos.x < statusViewXStart) {
-          // If clicking in the canvas area, proceed with selection/deselection
           initial_click_position = mousePos;
           controller.select_shape(initial_click_position);
           is_dragging = controller.getSelectedShape() != nullptr;
           shapeChanged = true;
         }
 
-        // Set focus to a specific entry field in StatusView if clicked
         if (status_view.getPosXEntry().getGlobalBounds().contains(mousePos))
           status_view.setFocusedField(StatusView::FocusedField::PosX);
         else if (status_view.getPosYEntry().getGlobalBounds().contains(
@@ -69,7 +65,6 @@ int main() {
           status_view.setFocusedField(StatusView::FocusedField::None);
       }
 
-      // Handle mouse movement for dragging
       if (event.type == sf::Event::MouseMoved && is_dragging) {
         sf::Vector2f new_position =
             window.mapPixelToCoords(sf::Mouse::getPosition(window));
@@ -77,7 +72,6 @@ int main() {
         shapeChanged = true;
       }
 
-      // Stop dragging on mouse release
       if (event.type == sf::Event::MouseButtonReleased &&
           event.mouseButton.button == sf::Mouse::Left) {
         is_dragging = false;
@@ -85,14 +79,11 @@ int main() {
         shapeChanged = true;
       }
 
-      // Handle text entry for position and size fields in StatusView
       if (event.type == sf::Event::TextEntered) {
         std::cout << "Text entered: " << event.text.unicode << std::endl;
-        // Pass the entered character to StatusView for editing
         status_view.handleTextInput(static_cast<char>(event.text.unicode));
       }
 
-      // Apply changes on pressing Enter
       if (event.type == sf::Event::KeyPressed &&
           event.key.code == sf::Keyboard::Enter) {
         if (controller.getSelectedShape()) {
@@ -102,16 +93,11 @@ int main() {
       }
     }
 
-    // Clear the window at the start of each frame
     window.clear(sf::Color::White);
 
-    // Render shapes in the canvas view
     controller.render_shapes();
-
-    // Render the status view, which will always display on the right
     status_view.render(controller.getSelectedShape());
 
-    // Update the display with all drawn elements
     window.display();
   }
 
