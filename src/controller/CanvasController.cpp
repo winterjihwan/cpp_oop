@@ -3,6 +3,7 @@
 Canvas_controller::Canvas_controller(Shape_factory *rectangle_factory,
                                      Shape_factory *ellipse_factory,
                                      Shape_factory *line_factory,
+                                     Shape_factory *text_factory,
                                      Canvas_view *canvas_view,
                                      StatusView *statusView)
     : rectangle_factory{rectangle_factory}, ellipse_factory{ellipse_factory},
@@ -23,6 +24,12 @@ void Canvas_controller::create_ellipse() {
 
 void Canvas_controller::create_line() {
   Shape *new_shape = line_factory->createShape();
+  shapes.push_back(new_shape);
+  isStatusViewDirty = true;
+}
+
+void Canvas_controller::create_text() {
+  Shape *new_shape = text_factory->createShape();
   shapes.push_back(new_shape);
   isStatusViewDirty = true;
 }

@@ -17,6 +17,7 @@ private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
   Shape_factory *line_factory;
+  Shape_factory *text_factory;
   Canvas_view *canvas_view;
   StatusView *status_view;
 
@@ -30,11 +31,13 @@ private:
 public:
   Canvas_controller(Shape_factory *rectangle_factory,
                     Shape_factory *ellipse_factory, Shape_factory *line_factory,
-                    Canvas_view *canvas_view, StatusView *status_view);
+                    Shape_factory *text_factory, Canvas_view *canvas_view,
+                    StatusView *status_view);
 
   void create_rectangle();
   void create_ellipse();
   void create_line();
+  void create_text();
 
   void select_shape(const sf::Vector2f &click_position);
   void move_shape(const sf::Vector2f &new_position);

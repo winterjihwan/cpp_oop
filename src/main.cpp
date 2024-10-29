@@ -4,6 +4,7 @@
 #include "./model/RectangleFactory.h"
 #include "./view/CanvasView.h"
 #include "./view/StatusView.h"
+#include "model/TextFactory.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -14,14 +15,16 @@ int main() {
   RectangleFactory rectangleFactory;
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
+  TextFactory textFactory;
   Canvas_view canvas_view(&window);
   StatusView status_view(&window);
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
-                               &canvas_view, &status_view);
+                               &textFactory, &canvas_view, &status_view);
 
   controller.create_rectangle();
   controller.create_ellipse();
   controller.create_line();
+  controller.create_text();
 
   sf::Vector2f initial_click_position;
   bool is_dragging = false;
