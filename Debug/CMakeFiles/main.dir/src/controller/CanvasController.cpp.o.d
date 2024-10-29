@@ -499,4 +499,7 @@ CMakeFiles/main.dir/src/controller/CanvasController.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../model/ShapeFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../view/CanvasView.h \
   /Users/anjihwan/cpp/cpp_oop/src/controller/../view/../model/Shape.h \
-  /Users/anjihwan/cpp/cpp_oop/src/controller/../view/StatusView.h
+  /Users/anjihwan/cpp/cpp_oop/src/controller/../view/Sidebar.h \
+  /Users/anjihwan/cpp/cpp_oop/src/controller/../view/StatusView.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/istream

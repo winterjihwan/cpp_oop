@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/anjihwan/cpp/cpp_oop/src/model/Text.cpp" "CMakeFiles/main.dir/src/model/Text.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Text.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.cpp" "CMakeFiles/main.dir/src/model/TextFactory.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/TextFactory.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp" "CMakeFiles/main.dir/src/view/CanvasView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/CanvasView.cpp.o.d"
+  "/Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp" "CMakeFiles/main.dir/src/view/Sidebar.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/Sidebar.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp" "CMakeFiles/main.dir/src/view/StatusView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/StatusView.cpp.o.d"
   )
 

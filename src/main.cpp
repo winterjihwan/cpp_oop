@@ -7,7 +7,6 @@
 #include "./view/StatusView.h"
 #include "model/TextFactory.h"
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 int main() {
   sf::RenderWindow window(sf::VideoMode(1200, 800), "Miridi project",
@@ -19,7 +18,7 @@ int main() {
   TextFactory textFactory;
   Canvas_view canvas_view(&window);
   StatusView status_view(&window);
-  Sidebar sidebar(200.0f, 800.0f); // Updated height to match window
+  Sidebar sidebar(200.0f, 800.0f);
 
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
                                &textFactory, &canvas_view, &status_view,
@@ -47,7 +46,7 @@ int main() {
             window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
         if (mousePos.x <= 200.0f) {
-          sidebar.handleSidebarClick(mousePos);
+          controller.handleSidebarClick(mousePos);
         } else {
           initial_click_position = mousePos;
           controller.select_shape(initial_click_position);

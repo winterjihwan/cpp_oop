@@ -91,6 +91,12 @@
 },
 {
   "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/view/Sidebar.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp",
+  "file": "/Users/anjihwan/cpp/cpp_oop/src/view/Sidebar.cpp",
+  "output": "CMakeFiles/main.dir/src/view/Sidebar.cpp.o"
+},
+{
+  "directory": "/Users/anjihwan/cpp/cpp_oop/Debug",
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -isystem /usr/local/include -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -o CMakeFiles/main.dir/src/view/StatusView.cpp.o -c /Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp",
   "file": "/Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp",
   "output": "CMakeFiles/main.dir/src/view/StatusView.cpp.o"

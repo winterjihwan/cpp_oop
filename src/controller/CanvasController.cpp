@@ -1,14 +1,23 @@
 #include "CanvasController.h"
+#include <iostream>
 
 Canvas_controller::Canvas_controller(Shape_factory *rectangle_factory,
                                      Shape_factory *ellipse_factory,
                                      Shape_factory *line_factory,
                                      Shape_factory *text_factory,
                                      Canvas_view *canvas_view,
-                                     StatusView *statusView)
+                                     StatusView *statusView, Sidebar *sidebar)
     : rectangle_factory{rectangle_factory}, ellipse_factory{ellipse_factory},
       line_factory{line_factory}, text_factory{text_factory},
-      canvas_view(canvas_view), status_view(statusView) {}
+      canvas_view(canvas_view), status_view(statusView), sidebar(sidebar) {}
+
+void Canvas_controller::handleSidebarClick(const sf::Vector2f &clickPosition) {
+  std::string shapeType = sidebar->handleClick(clickPosition);
+  std::cout << "ShapeType: " << shapeType << "\n";
+  if (!shapeType.empty()) {
+    selectedShapeType = shapeType;
+  }
+}
 
 void Canvas_controller::create_rectangle() {
   Shape *new_shape = rectangle_factory->createShape();

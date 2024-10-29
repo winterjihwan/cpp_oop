@@ -4,6 +4,7 @@
 #include "../model/Shape.h"
 #include "../model/ShapeFactory.h"
 #include "../view/CanvasView.h"
+#include "../view/Sidebar.h"
 #include "../view/StatusView.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
@@ -20,9 +21,12 @@ private:
   Shape_factory *text_factory;
   Canvas_view *canvas_view;
   StatusView *status_view;
+  Sidebar *sidebar;
 
   std::vector<Shape *> shapes;
   Shape *selected_shape = nullptr;
+
+  std::string selectedShapeType;
 
   sf::Vector2f offset;
   bool is_selected = false;
@@ -32,7 +36,9 @@ public:
   Canvas_controller(Shape_factory *rectangle_factory,
                     Shape_factory *ellipse_factory, Shape_factory *line_factory,
                     Shape_factory *text_factory, Canvas_view *canvas_view,
-                    StatusView *status_view);
+                    StatusView *status_view, Sidebar *sidebar);
+
+  void handleSidebarClick(const sf::Vector2f &clickPosition);
 
   void create_rectangle();
   void create_ellipse();
