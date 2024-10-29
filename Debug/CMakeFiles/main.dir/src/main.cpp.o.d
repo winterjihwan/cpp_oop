@@ -505,6 +505,7 @@ CMakeFiles/main.dir/src/main.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/./model/RectangleFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/./controller/../model/Rectangle.h \
   /Users/anjihwan/cpp/cpp_oop/src/./view/CanvasView.h \
+  /Users/anjihwan/cpp/cpp_oop/src/./view/Sidebar.h \
   /Users/anjihwan/cpp/cpp_oop/src/./view/StatusView.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/TextFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/./controller/../model/Text.h \
