@@ -14,7 +14,6 @@ float Ellipse::get_height() const {
   return ellipse.getRadius() * 2.0f * ellipse.getScale().y;
 }
 
-// isSelected() 메서드 정의: 타원 내부에 특정 위치가 포함되는지 확인
 bool Ellipse::isSelected(const sf::Vector2f &point) const {
   sf::Vector2f center = ellipse.getPosition() +
                         sf::Vector2f(ellipse.getRadius(), ellipse.getRadius());

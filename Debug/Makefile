@@ -225,30 +225,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/model/Canvas.o: src/model/Canvas.cpp.o
-.PHONY : src/model/Canvas.o
-
-# target to build an object file
-src/model/Canvas.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/Canvas.cpp.o
-.PHONY : src/model/Canvas.cpp.o
-
-src/model/Canvas.i: src/model/Canvas.cpp.i
-.PHONY : src/model/Canvas.i
-
-# target to preprocess a source file
-src/model/Canvas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/Canvas.cpp.i
-.PHONY : src/model/Canvas.cpp.i
-
-src/model/Canvas.s: src/model/Canvas.cpp.s
-.PHONY : src/model/Canvas.s
-
-# target to generate assembly for a file
-src/model/Canvas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/model/Canvas.cpp.s
-.PHONY : src/model/Canvas.cpp.s
-
 src/model/Ellipse.o: src/model/Ellipse.cpp.o
 .PHONY : src/model/Ellipse.o
 
@@ -489,30 +465,6 @@ src/view/CanvasView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/CanvasView.cpp.s
 .PHONY : src/view/CanvasView.cpp.s
 
-src/view/ShapeView.o: src/view/ShapeView.cpp.o
-.PHONY : src/view/ShapeView.o
-
-# target to build an object file
-src/view/ShapeView.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/ShapeView.cpp.o
-.PHONY : src/view/ShapeView.cpp.o
-
-src/view/ShapeView.i: src/view/ShapeView.cpp.i
-.PHONY : src/view/ShapeView.i
-
-# target to preprocess a source file
-src/view/ShapeView.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/ShapeView.cpp.i
-.PHONY : src/view/ShapeView.cpp.i
-
-src/view/ShapeView.s: src/view/ShapeView.cpp.s
-.PHONY : src/view/ShapeView.s
-
-# target to generate assembly for a file
-src/view/ShapeView.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/view/ShapeView.cpp.s
-.PHONY : src/view/ShapeView.cpp.s
-
 src/view/StatusView.o: src/view/StatusView.cpp.o
 .PHONY : src/view/StatusView.o
 
@@ -558,9 +510,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/model/Canvas.o"
-	@echo "... src/model/Canvas.i"
-	@echo "... src/model/Canvas.s"
 	@echo "... src/model/Ellipse.o"
 	@echo "... src/model/Ellipse.i"
 	@echo "... src/model/Ellipse.s"
@@ -591,9 +540,6 @@ help:
 	@echo "... src/view/CanvasView.o"
 	@echo "... src/view/CanvasView.i"
 	@echo "... src/view/CanvasView.s"
-	@echo "... src/view/ShapeView.o"
-	@echo "... src/view/ShapeView.i"
-	@echo "... src/view/ShapeView.s"
 	@echo "... src/view/StatusView.o"
 	@echo "... src/view/StatusView.i"
 	@echo "... src/view/StatusView.s"

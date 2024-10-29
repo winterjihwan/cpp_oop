@@ -1926,7 +1926,6 @@ CMakeFiles/main.dir/src/main.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/main.cpp \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  /Users/anjihwan/cpp/cpp_oop/src/model/Line.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/Rectangle.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/Shape.h \
   /Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.h \
@@ -2015,9 +2014,6 @@ CMakeFiles/main.dir/src/main.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/main.cpp \
   /usr/local/include/SFML/Window/WindowBase.hpp \
   /usr/local/include/SFML/Window/WindowHandle.hpp \
   /usr/local/include/SFML/Window/WindowStyle.hpp
-
-CMakeFiles/main.dir/src/model/Canvas.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp \
-  /Users/anjihwan/cpp/cpp_oop/src/model/Canvas.h
 
 CMakeFiles/main.dir/src/model/Ellipse.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/Availability.h \
@@ -6026,9 +6022,6 @@ CMakeFiles/main.dir/src/view/CanvasView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/v
   /usr/local/include/SFML/Window/WindowHandle.hpp \
   /usr/local/include/SFML/Window/WindowStyle.hpp
 
-CMakeFiles/main.dir/src/view/ShapeView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.cpp \
-  /Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.h
-
 CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityInternal.h \
@@ -6548,8 +6541,6 @@ CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/v
 
 /Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.h:
 
-/Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp:
-
 /Users/anjihwan/cpp/cpp_oop/src/model/RectangleFactory.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream:
@@ -6639,8 +6630,6 @@ CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/v
 /usr/local/include/SFML/Graphics/PrimitiveType.hpp:
 
 /usr/local/include/SFML/Graphics/Image.hpp:
-
-/Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.cpp:
 
 /usr/local/include/SFML/System/ThreadLocalPtr.inl:
 
@@ -6765,8 +6754,6 @@ CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/v
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/math.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_fd_isset.h:
-
-/Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_clock_t.h:
 
@@ -7391,8 +7378,6 @@ CMakeFiles/main.dir/src/view/StatusView.cpp.o: /Users/anjihwan/cpp/cpp_oop/src/v
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__functional/perfect_forward.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/strings.h:
-
-/Users/anjihwan/cpp/cpp_oop/src/model/Canvas.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__algorithm/find_if.h:
 

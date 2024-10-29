@@ -1,6 +1,7 @@
 CMakeFiles/main.dir/src/model/Line.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/model/Line.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/model/Line.h \
+  /Users/anjihwan/cpp/cpp_oop/src/model/Shape.h \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
   /usr/local/include/SFML/Config.hpp \
@@ -495,7 +496,6 @@ CMakeFiles/main.dir/src/model/Line.cpp.o: \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
   /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/anjihwan/cpp/cpp_oop/src/model/Shape.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/math.h

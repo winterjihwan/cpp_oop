@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/anjihwan/cpp/cpp_oop/src/command/ResizeCommand.cpp" "CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o" "gcc" "CMakeFiles/main.dir/src/command/ResizeCommand.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/controller/CanvasController.cpp" "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o" "gcc" "CMakeFiles/main.dir/src/controller/CanvasController.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
-  "/Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp" "CMakeFiles/main.dir/src/model/Canvas.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Canvas.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/Ellipse.cpp" "CMakeFiles/main.dir/src/model/Ellipse.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Ellipse.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/EllipseFactory.cpp" "CMakeFiles/main.dir/src/model/EllipseFactory.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/EllipseFactory.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/Image.cpp" "CMakeFiles/main.dir/src/model/Image.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Image.cpp.o.d"
@@ -23,7 +22,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/anjihwan/cpp/cpp_oop/src/model/ShapeFactory.cpp" "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/ShapeFactory.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/model/Text.cpp" "CMakeFiles/main.dir/src/model/Text.cpp.o" "gcc" "CMakeFiles/main.dir/src/model/Text.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp" "CMakeFiles/main.dir/src/view/CanvasView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/CanvasView.cpp.o.d"
-  "/Users/anjihwan/cpp/cpp_oop/src/view/ShapeView.cpp" "CMakeFiles/main.dir/src/view/ShapeView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/ShapeView.cpp.o.d"
   "/Users/anjihwan/cpp/cpp_oop/src/view/StatusView.cpp" "CMakeFiles/main.dir/src/view/StatusView.cpp.o" "gcc" "CMakeFiles/main.dir/src/view/StatusView.cpp.o.d"
   )
 

@@ -502,7 +502,6 @@ CMakeFiles/main.dir/src/main.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/./controller/../view/StatusView.h \
   /Users/anjihwan/cpp/cpp_oop/src/./model/EllipseFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/./model/LineFactory.h \
-  /Users/anjihwan/cpp/cpp_oop/src/./controller/../model/Line.h \
   /Users/anjihwan/cpp/cpp_oop/src/./model/RectangleFactory.h \
   /Users/anjihwan/cpp/cpp_oop/src/./controller/../model/Rectangle.h \
   /Users/anjihwan/cpp/cpp_oop/src/./view/CanvasView.h \

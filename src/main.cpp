@@ -8,8 +8,7 @@
 #include <iostream>
 
 int main() {
-  sf::RenderWindow window(sf::VideoMode(1200, 800),
-                          "Shape Factory Pattern Example",
+  sf::RenderWindow window(sf::VideoMode(1200, 800), "Miridi project",
                           sf::Style::Titlebar | sf::Style::Close);
 
   RectangleFactory rectangleFactory;
@@ -32,12 +31,10 @@ int main() {
     bool shapeChanged =
         false; // Flag to track changes in shape positions or selection
 
-    // Process events
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed)
         window.close();
 
-      // Handle mouse press for shape selection and drag start
       if (event.type == sf::Event::MouseButtonPressed &&
           event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos =

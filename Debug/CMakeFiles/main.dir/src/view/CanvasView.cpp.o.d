@@ -1,6 +1,7 @@
 CMakeFiles/main.dir/src/view/CanvasView.cpp.o: \
   /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.cpp \
   /Users/anjihwan/cpp/cpp_oop/src/view/CanvasView.h \
+  /Users/anjihwan/cpp/cpp_oop/src/view/../model/Shape.h \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
   /usr/local/include/SFML/Config.hpp \
@@ -494,5 +495,4 @@ CMakeFiles/main.dir/src/view/CanvasView.cpp.o: \
   /usr/local/include/SFML/Graphics/Glsl.inl \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
-  /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/anjihwan/cpp/cpp_oop/src/view/../model/Shape.h
+  /usr/local/include/SFML/Graphics/VertexBuffer.hpp
