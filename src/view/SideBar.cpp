@@ -1,6 +1,7 @@
 
 #include "Sidebar.h"
 #include "../model/EllipseFactory.h"
+#include "../model/ImageFactory.h"
 #include "../model/LineFactory.h"
 #include "../model/RectangleFactory.h"
 #include "../model/TextFactory.h"
@@ -14,7 +15,8 @@ Sidebar::Sidebar(float width, float height) {
 
 void Sidebar::initializeButtons() {
   float buttonHeight = 50.0f;
-  std::vector<std::string> labels = {"Rectangle", "Ellipse", "Line", "Text"};
+  std::vector<std::string> labels = {"Rectangle", "Ellipse", "Line", "Text",
+                                     "Image"};
   buttonLabels = labels;
 
   for (size_t i = 0; i < labels.size(); ++i) {
@@ -31,6 +33,7 @@ void Sidebar::createPreviews() {
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
   TextFactory textFactory;
+  ImageFactory imageFactory("apple.png");
 
   std::unique_ptr<Shape> rectanglePreview(
       rectangleFactory.createShape({10.0f, 10.0f}));
@@ -46,6 +49,10 @@ void Sidebar::createPreviews() {
 
   std::unique_ptr<Shape> textPreview(textFactory.createShape({10.0f, 190.0f}));
   previewShapes.push_back(std::move(textPreview));
+
+  std::unique_ptr<Shape> imagePreview(
+      imageFactory.createShape({10.0f, 190.0f}));
+  previewShapes.push_back(std::move(imagePreview));
 }
 
 void Sidebar::render(sf::RenderWindow &window) {
