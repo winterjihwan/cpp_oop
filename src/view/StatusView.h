@@ -9,7 +9,7 @@ class StatusView {
 public:
   StatusView(sf::RenderWindow *window);
 
-  enum class FocusedField { None, PosX, PosY, SizeX, SizeY };
+  enum class FocusedField { None, PosX, PosY, SizeX, SizeY, Z };
 
   void render(const Shape *shape);
   void clear();
@@ -21,6 +21,7 @@ public:
   const sf::Text &getPosYEntry() const { return posYEntryText; }
   const sf::Text &getSizeXEntry() const { return sizeXEntryText; }
   const sf::Text &getSizeYEntry() const { return sizeYEntryText; }
+  const sf::Text &getZEntry() const { return zEntryText; }
 
 private:
   sf::RenderWindow *window;
@@ -42,6 +43,10 @@ private:
   std::string posYEntryValue;
   std::string sizeXEntryValue;
   std::string sizeYEntryValue;
+
+  sf::Text zLabel;
+  sf::Text zEntryText;
+  std::string zEntryValue;
 
   sf::Text colorValue;
 

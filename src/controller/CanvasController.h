@@ -19,6 +19,7 @@ private:
   Shape_factory *ellipse_factory;
   Shape_factory *line_factory;
   Shape_factory *text_factory;
+  Shape_factory *image_factory;
   Canvas_view *canvas_view;
   StatusView *status_view;
   Sidebar *sidebar;
@@ -35,8 +36,9 @@ private:
 public:
   Canvas_controller(Shape_factory *rectangle_factory,
                     Shape_factory *ellipse_factory, Shape_factory *line_factory,
-                    Shape_factory *text_factory, Canvas_view *canvas_view,
-                    StatusView *status_view, Sidebar *sidebar);
+                    Shape_factory *text_factory, Shape_factory *image_factory,
+                    Canvas_view *canvas_view, StatusView *status_view,
+                    Sidebar *sidebar);
 
   void handleSidebarClick(const sf::Vector2f &clickPosition);
 
@@ -46,6 +48,7 @@ public:
   void create_ellipse(const sf::Vector2f &position);
   void create_line(const sf::Vector2f &position);
   void create_text(const sf::Vector2f &position);
+  void create_image(const sf::Vector2f &position);
 
   void select_shape(const sf::Vector2f &click_position);
   void move_shape(const sf::Vector2f &new_position);
@@ -59,6 +62,7 @@ public:
   bool isStatusViewDirty = true;
 
   void render_shapes();
+  void sort_shapes_by_z();
 };
 
 #endif // CANVAS_CONTROLLER_H

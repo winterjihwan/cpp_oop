@@ -23,6 +23,12 @@ public:
   virtual void highlight() = 0;
 
   virtual void unhighlight() = 0;
+
+  void setZ(int z) { this->z = z; }
+  int getZ() const { return z; }
+
+protected:
+  int z = 0;
 };
 
 #endif // SHAPE_H

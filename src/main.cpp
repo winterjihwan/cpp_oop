@@ -5,6 +5,7 @@
 #include "./view/CanvasView.h"
 #include "./view/Sidebar.h"
 #include "./view/StatusView.h"
+#include "model/ImageFactory.h"
 #include "model/TextFactory.h"
 #include <SFML/Graphics.hpp>
 
@@ -16,13 +17,14 @@ int main() {
   EllipseFactory ellipseFactory;
   LineFactory lineFactory;
   TextFactory textFactory;
+  ImageFactory imageFactory("apple.png");
   Canvas_view canvas_view(&window);
   StatusView status_view(&window);
   Sidebar sidebar(200.0f, 800.0f);
 
   Canvas_controller controller(&rectangleFactory, &ellipseFactory, &lineFactory,
-                               &textFactory, &canvas_view, &status_view,
-                               &sidebar);
+                               &textFactory, &imageFactory, &canvas_view,
+                               &status_view, &sidebar);
 
   sf::Vector2f initial_click_position;
   bool is_dragging = false;
@@ -52,6 +54,11 @@ int main() {
           } else {
             initial_click_position = mousePos;
             controller.select_shape(initial_click_position);
+
+            if (Shape *selectedShape = controller.getSelectedShape()) {
+              selectedShape->setZ(selectedShape->getZ() + 1);
+            }
+
             is_dragging = controller.getSelectedShape() != nullptr;
             shapeChanged = true;
           }
@@ -68,6 +75,8 @@ int main() {
         else if (status_view.getSizeYEntry().getGlobalBounds().contains(
                      mousePos))
           status_view.setFocusedField(StatusView::FocusedField::SizeY);
+        else if (status_view.getZEntry().getGlobalBounds().contains(mousePos))
+          status_view.setFocusedField(StatusView::FocusedField::Z);
         else
           status_view.setFocusedField(StatusView::FocusedField::None);
       }
@@ -100,6 +109,8 @@ int main() {
     }
 
     window.clear(sf::Color::White);
+
+    controller.sort_shapes_by_z();
 
     controller.render_shapes();
     sidebar.render(window);

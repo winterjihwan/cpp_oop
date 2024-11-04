@@ -1,2 +1,0 @@
-CMakeFiles/main.dir/src/model/Canvas.cpp.o: \
-  /Users/anjihwan/cpp/cpp_oop/src/model/Canvas.cpp
