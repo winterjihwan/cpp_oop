@@ -2,7 +2,6 @@
 #define TEXT_FACTORY_H
 
 #include "ShapeFactory.h"
-#include "Text.h"
 #include <SFML/Graphics.hpp>
 
 class TextFactory : public Shape_factory {

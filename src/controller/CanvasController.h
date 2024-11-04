@@ -59,6 +59,7 @@ public:
   bool isStatusViewDirty = true;
 
   void render_shapes();
+  void sort_shapes_by_z();
 };
 
 #endif // CANVAS_CONTROLLER_H

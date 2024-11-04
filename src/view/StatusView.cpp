@@ -30,25 +30,35 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window) {
   sizeLabel.setFillColor(sf::Color::Black);
   sizeLabel.setPosition(window->getSize().x * 0.7f + 10, 100);
 
+  zLabel.setFont(font);
+  zLabel.setString("Z:");
+  zLabel.setCharacterSize(14);
+  zLabel.setFillColor(sf::Color::Black);
+  zLabel.setPosition(window->getSize().x * 0.7f + 10, 140);
+
   posXEntryText.setFont(font);
   posYEntryText.setFont(font);
   sizeXEntryText.setFont(font);
   sizeYEntryText.setFont(font);
+  zEntryText.setFont(font);
 
   posXEntryText.setCharacterSize(14);
   posYEntryText.setCharacterSize(14);
   sizeXEntryText.setCharacterSize(14);
   sizeYEntryText.setCharacterSize(14);
+  zEntryText.setCharacterSize(14);
 
   posXEntryText.setFillColor(sf::Color::Black);
   posYEntryText.setFillColor(sf::Color::Black);
   sizeXEntryText.setFillColor(sf::Color::Black);
   sizeYEntryText.setFillColor(sf::Color::Black);
+  zEntryText.setFillColor(sf::Color::Black);
 
   posXEntryText.setPosition(window->getSize().x * 0.7f + 80, 20);
   posYEntryText.setPosition(window->getSize().x * 0.7f + 140, 20);
   sizeXEntryText.setPosition(window->getSize().x * 0.7f + 80, 100);
   sizeYEntryText.setPosition(window->getSize().x * 0.7f + 140, 100);
+  zEntryText.setPosition(window->getSize().x * 0.7f + 80, 140);
 
   colorValue.setFont(font);
   colorValue.setCharacterSize(14);
@@ -57,14 +67,13 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window) {
 }
 
 void StatusView::render(const Shape *shape) {
-
   window->draw(statusBar);
   window->draw(positionLabel);
   window->draw(colorLabel);
   window->draw(sizeLabel);
+  window->draw(zLabel);
 
   if (shape != nullptr) {
-
     if (focusedField == FocusedField::None) {
       updateEntryFields(shape);
     }
@@ -73,6 +82,7 @@ void StatusView::render(const Shape *shape) {
     posYEntryText.setString(posYEntryValue);
     sizeXEntryText.setString(sizeXEntryValue);
     sizeYEntryText.setString(sizeYEntryValue);
+    zEntryText.setString(zEntryValue);
 
     posXEntryText.setFillColor(focusedField == FocusedField::PosX
                                    ? sf::Color::Blue
@@ -86,11 +96,14 @@ void StatusView::render(const Shape *shape) {
     sizeYEntryText.setFillColor(focusedField == FocusedField::SizeY
                                     ? sf::Color::Blue
                                     : sf::Color::Black);
+    zEntryText.setFillColor(focusedField == FocusedField::Z ? sf::Color::Blue
+                                                            : sf::Color::Black);
 
     window->draw(posXEntryText);
     window->draw(posYEntryText);
     window->draw(sizeXEntryText);
     window->draw(sizeYEntryText);
+    window->draw(zEntryText);
 
     sf::Color shapeColor = shape->getColor();
     std::ostringstream colorStream;
@@ -100,7 +113,6 @@ void StatusView::render(const Shape *shape) {
     colorValue.setString(colorStream.str());
     window->draw(colorValue);
   } else {
-
     clear();
   }
 }
@@ -110,6 +122,7 @@ void StatusView::clear() {
   posYEntryValue.clear();
   sizeXEntryValue.clear();
   sizeYEntryValue.clear();
+  zEntryValue.clear();
   colorValue.setString("");
 }
 
@@ -118,6 +131,7 @@ void StatusView::updateEntryFields(const Shape *shape) {
   posYEntryValue = std::to_string(static_cast<int>(shape->getPosition().y));
   sizeXEntryValue = std::to_string(static_cast<int>(shape->getSize().x));
   sizeYEntryValue = std::to_string(static_cast<int>(shape->getSize().y));
+  zEntryValue = std::to_string(shape->getZ());
 }
 
 void StatusView::setFocusedField(FocusedField field) { focusedField = field; }
@@ -137,6 +151,9 @@ void StatusView::handleTextInput(char inputChar) {
     break;
   case FocusedField::SizeY:
     currentEntry = &sizeYEntryValue;
+    break;
+  case FocusedField::Z:
+    currentEntry = &zEntryValue;
     break;
   default:
     std::cout << "No field is focused." << std::endl;
@@ -164,7 +181,9 @@ void StatusView::applyChanges(Shape *shape) {
   int newY = std::stoi(posYEntryValue);
   int newWidth = std::stoi(sizeXEntryValue);
   int newHeight = std::stoi(sizeYEntryValue);
+  int newZ = std::stoi(zEntryValue);
 
   shape->setPosition(sf::Vector2f(newX, newY));
   shape->setSize(sf::Vector2f(newWidth, newHeight));
+  shape->setZ(newZ);
 }

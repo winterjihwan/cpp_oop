@@ -8,6 +8,7 @@
 class Rectangle : public Shape {
 private:
   sf::RectangleShape shape;
+  int z;
 
 public:
   Rectangle(float x, float y, float width, float height);

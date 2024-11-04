@@ -114,3 +114,8 @@ std::string Canvas_controller::getSelectedShapeType() const {
 void Canvas_controller::render_shapes() { canvas_view->render(shapes); }
 
 void Canvas_controller::end_drag() { is_dragging = false; }
+
+void Canvas_controller::sort_shapes_by_z() {
+  std::sort(shapes.begin(), shapes.end(),
+            [](Shape *a, Shape *b) { return a->getZ() < b->getZ(); });
+}

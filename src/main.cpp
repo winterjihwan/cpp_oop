@@ -68,6 +68,8 @@ int main() {
         else if (status_view.getSizeYEntry().getGlobalBounds().contains(
                      mousePos))
           status_view.setFocusedField(StatusView::FocusedField::SizeY);
+        else if (status_view.getZEntry().getGlobalBounds().contains(mousePos))
+          status_view.setFocusedField(StatusView::FocusedField::Z);
         else
           status_view.setFocusedField(StatusView::FocusedField::None);
       }
@@ -100,6 +102,8 @@ int main() {
     }
 
     window.clear(sf::Color::White);
+
+    controller.sort_shapes_by_z();
 
     controller.render_shapes();
     sidebar.render(window);
