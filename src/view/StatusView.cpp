@@ -3,7 +3,8 @@
 #include <sstream>
 #include <stdexcept>
 
-StatusView::StatusView(sf::RenderWindow *window) : window(window) {
+StatusView::StatusView(sf::RenderWindow *window) : window(window)
+{
   if (!font.loadFromFile("FiraCode-Regular.ttf"))
     throw std::runtime_error("Failed to load font");
 
@@ -66,15 +67,18 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window) {
   colorValue.setPosition(window->getSize().x * 0.7f + 80, 60);
 }
 
-void StatusView::render(const Shape *shape) {
+void StatusView::render(const Shape *shape)
+{
   window->draw(statusBar);
   window->draw(positionLabel);
   window->draw(colorLabel);
   window->draw(sizeLabel);
   window->draw(zLabel);
 
-  if (shape != nullptr) {
-    if (focusedField == FocusedField::None) {
+  if (shape != nullptr)
+  {
+    if (focusedField == FocusedField::None)
+    {
       updateEntryFields(shape);
     }
 
@@ -112,12 +116,15 @@ void StatusView::render(const Shape *shape) {
                 << ", B: " << static_cast<int>(shapeColor.b);
     colorValue.setString(colorStream.str());
     window->draw(colorValue);
-  } else {
+  }
+  else
+  {
     clear();
   }
 }
 
-void StatusView::clear() {
+void StatusView::clear()
+{
   posXEntryValue.clear();
   posYEntryValue.clear();
   sizeXEntryValue.clear();
@@ -126,7 +133,8 @@ void StatusView::clear() {
   colorValue.setString("");
 }
 
-void StatusView::updateEntryFields(const Shape *shape) {
+void StatusView::updateEntryFields(const Shape *shape)
+{
   posXEntryValue = std::to_string(static_cast<int>(shape->getPosition().x));
   posYEntryValue = std::to_string(static_cast<int>(shape->getPosition().y));
   sizeXEntryValue = std::to_string(static_cast<int>(shape->getSize().x));
@@ -136,10 +144,12 @@ void StatusView::updateEntryFields(const Shape *shape) {
 
 void StatusView::setFocusedField(FocusedField field) { focusedField = field; }
 
-void StatusView::handleTextInput(char inputChar) {
+void StatusView::handleTextInput(char inputChar)
+{
   std::string *currentEntry = nullptr;
 
-  switch (focusedField) {
+  switch (focusedField)
+  {
   case FocusedField::PosX:
     currentEntry = &posXEntryValue;
     break;
@@ -160,20 +170,25 @@ void StatusView::handleTextInput(char inputChar) {
     return;
   }
 
-  if (inputChar == '\b' && currentEntry != nullptr) {
-    if (!currentEntry->empty()) {
+  if (inputChar == '\b' && currentEntry != nullptr)
+  {
+    if (!currentEntry->empty())
+    {
       currentEntry->pop_back();
       std::cout << "Backspace pressed. Updated field: " << *currentEntry
                 << std::endl;
     }
-  } else if (std::isdigit(inputChar)) {
+  }
+  else if (std::isdigit(inputChar))
+  {
     *currentEntry += inputChar;
     std::cout << "Digit entered: " << inputChar
               << " Updated field: " << *currentEntry << std::endl;
   }
 }
 
-void StatusView::applyChanges(Shape *shape) {
+void StatusView::applyChanges(Shape *shape)
+{
   if (shape == nullptr)
     return;
 

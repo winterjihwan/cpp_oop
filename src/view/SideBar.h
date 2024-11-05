@@ -5,8 +5,10 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <vector>
+#include <memory>
 
-class Sidebar {
+class Sidebar
+{
 public:
   Sidebar(float width, float height);
   void render(sf::RenderWindow &window);
