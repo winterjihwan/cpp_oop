@@ -51,7 +51,7 @@ void Sidebar::createPreviews() {
   previewShapes.push_back(std::move(textPreview));
 
   std::unique_ptr<Shape> imagePreview(
-      imageFactory.createShape({10.0f, 190.0f}));
+      imageFactory.createShape({10.0f, 210.0f}));
   previewShapes.push_back(std::move(imagePreview));
 }
 

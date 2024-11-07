@@ -10,8 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-int main()
-{
+int main() {
   sf::RenderWindow window(sf::VideoMode(1200, 800), "Miridi project",
                           sf::Style::Titlebar | sf::Style::Close);
 
@@ -32,29 +31,23 @@ int main()
   bool is_dragging = false;
   bool shouldCreateShape = false;
 
-  while (window.isOpen())
-  {
+  while (window.isOpen()) {
     sf::Event event;
     bool shapeChanged = false;
 
-    while (window.pollEvent(event))
-    {
+    while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed)
         window.close();
 
       if (event.type == sf::Event::MouseButtonPressed &&
-          event.mouseButton.button == sf::Mouse::Left)
-      {
+          event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos =
             window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
-        if (mousePos.x <= 200.0f)
-        {
+        if (mousePos.x <= 200.0f) {
           controller.handleSidebarClick(mousePos);
           shouldCreateShape = true;
-        }
-        else if (mousePos.x > window.getSize().x * 0.7f)
-        {
+        } else if (mousePos.x > window.getSize().x * 0.7f) {
           std::cout << "Clicked on status view" << std::endl;
           if (status_view.getPosXEntry().getGlobalBounds().contains(mousePos))
             status_view.setFocusedField(StatusView::FocusedField::PosX);
@@ -71,23 +64,19 @@ int main()
             status_view.setFocusedField(StatusView::FocusedField::Z);
           else
             status_view.setFocusedField(StatusView::FocusedField::None);
-        }
-        else
-        {
-          if (shouldCreateShape)
-          {
+        } else {
+          if (shouldCreateShape) {
             controller.create_shape(controller.getSelectedShapeType(),
                                     mousePos);
             shouldCreateShape = false;
-          }
-          else
-          {
+          } else {
             initial_click_position = mousePos;
             controller.select_shape(initial_click_position);
 
-            if (Shape *selectedShape = controller.getSelectedShape())
-            {
-              selectedShape->setZ(selectedShape->getZ() + 1); // this line of code is causing a bug of z increasing forever
+            if (Shape *selectedShape = controller.getSelectedShape()) {
+              selectedShape->setZ(selectedShape->getZ() +
+                                  1); // this line of code is causing a bug of z
+                                      // increasing forever
             }
 
             is_dragging = controller.getSelectedShape() != nullptr;
@@ -96,8 +85,7 @@ int main()
         }
       }
 
-      if (event.type == sf::Event::MouseMoved && is_dragging)
-      {
+      if (event.type == sf::Event::MouseMoved && is_dragging) {
         sf::Vector2f new_position =
             window.mapPixelToCoords(sf::Mouse::getPosition(window));
         controller.move_shape(new_position);
@@ -105,23 +93,19 @@ int main()
       }
 
       if (event.type == sf::Event::MouseButtonReleased &&
-          event.mouseButton.button == sf::Mouse::Left)
-      {
+          event.mouseButton.button == sf::Mouse::Left) {
         is_dragging = false;
         controller.end_drag();
         shapeChanged = true;
       }
 
-      if (event.type == sf::Event::TextEntered)
-      {
+      if (event.type == sf::Event::TextEntered) {
         status_view.handleTextInput(static_cast<char>(event.text.unicode));
       }
 
       if (event.type == sf::Event::KeyPressed &&
-          event.key.code == sf::Keyboard::Enter)
-      {
-        if (controller.getSelectedShape())
-        {
+          event.key.code == sf::Keyboard::Enter) {
+        if (controller.getSelectedShape()) {
           status_view.applyChanges(controller.getSelectedShape());
           shapeChanged = true;
         }
