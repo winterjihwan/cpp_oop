@@ -3,10 +3,12 @@
 
 #include "ShapeFactory.h"
 #include <SFML/Graphics.hpp>
+#include <memory>
 
-class TextFactory : public Shape_factory {
+class TextFactory : public Shape_factory
+{
 public:
-  Shape *createShape(const sf::Vector2f &position) override;
+  std::shared_ptr<Shape> createShape(const sf::Vector2f &position) override;
 };
 
 #endif // TEXT_FACTORY_H

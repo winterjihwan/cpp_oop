@@ -3,8 +3,11 @@
 #define SHAPE_H
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+#include <memory>
 
-class Shape : public sf::Drawable {
+class Shape : public sf::Drawable
+{
 public:
   virtual ~Shape() = default;
 
@@ -26,6 +29,17 @@ public:
 
   void setZ(int z) { this->z = z; }
   int getZ() const { return z; }
+
+  virtual void add(std::shared_ptr<Shape> shape)
+  {
+  }
+  virtual void remove(std::shared_ptr<Shape> shape)
+  {
+  }
+  virtual std::shared_ptr<Shape> getChild(int index) const
+  {
+    return nullptr;
+  }
 
 protected:
   int z = 0;

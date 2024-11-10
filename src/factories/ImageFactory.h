@@ -4,15 +4,16 @@
 #include "ShapeFactory.h"
 #include <SFML/Graphics.hpp>
 #include <string>
+#include <memory>
 
-class ImageFactory : public Shape_factory {
+class ImageFactory : public Shape_factory
+{
 private:
   std::string filepath;
 
 public:
-  explicit ImageFactory(const std::string &filepath);
-
-  Shape *createShape(const sf::Vector2f &position) override;
+  explicit ImageFactory(const std::string &filename);
+  std::shared_ptr<Shape> createShape(const sf::Vector2f &position) override;
 };
 
 #endif // IMAGE_FACTORY_H

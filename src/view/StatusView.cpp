@@ -67,7 +67,7 @@ StatusView::StatusView(sf::RenderWindow *window) : window(window)
   colorValue.setPosition(window->getSize().x * 0.7f + 80, 60);
 }
 
-void StatusView::render(const Shape *shape)
+void StatusView::render(const std::shared_ptr<Shape> &shape)
 {
   window->draw(statusBar);
   window->draw(positionLabel);
@@ -133,9 +133,9 @@ void StatusView::clear()
   colorValue.setString("");
 }
 
-void StatusView::updateEntryFields(const Shape *shape)
+void StatusView::updateEntryFields(const std::shared_ptr<Shape> &shape)
 {
-  posXEntryValue = std::to_string(static_cast<int>(shape->getPosition().x));
+  posXEntryValue = std::to_string(static_cast<int>(shape->getPosition().x) - 200);
   posYEntryValue = std::to_string(static_cast<int>(shape->getPosition().y));
   sizeXEntryValue = std::to_string(static_cast<int>(shape->getSize().x));
   sizeYEntryValue = std::to_string(static_cast<int>(shape->getSize().y));
@@ -187,12 +187,12 @@ void StatusView::handleTextInput(char inputChar)
   }
 }
 
-void StatusView::applyChanges(Shape *shape)
+void StatusView::applyChanges(const std::shared_ptr<Shape> &shape)
 {
   if (shape == nullptr)
     return;
 
-  int newX = std::stoi(posXEntryValue);
+  int newX = std::stoi(posXEntryValue) + 200;
   int newY = std::stoi(posYEntryValue);
   int newWidth = std::stoi(sizeXEntryValue);
   int newHeight = std::stoi(sizeYEntryValue);

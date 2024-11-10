@@ -2,13 +2,20 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-class Command {
+#include "CommandInterface.h"
+#include <stack>
+#include <memory>
+
+class Command
+{
 public:
-  virtual ~Command() = default;
+  void executeCommand(std::shared_ptr<CommandInterface> command);
+  void undo();
+  void redo();
 
-  virtual void execute() = 0;
-
-  virtual void undo() = 0;
+private:
+  std::stack<std::shared_ptr<CommandInterface>> undoStack;
+  std::stack<std::shared_ptr<CommandInterface>> redoStack;
 };
 
 #endif // COMMAND_H

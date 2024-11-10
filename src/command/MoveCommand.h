@@ -1,20 +1,24 @@
-#ifndef MOVE_COMMAND_H
-#define MOVE_COMMAND_H
+// MoveCommand.h
+#ifndef MOVECOMMAND_H
+#define MOVECOMMAND_H
 
-#include "../model/Shape.h"
-#include "Command.h"
+#include "CommandInterface.h"
+#include "Shape.h"
 #include <SFML/Graphics.hpp>
+#include <memory>
 
-class MoveCommand : public Command {
-private:
-  Shape *shape;
-  sf::Vector2f newPosition;
-  sf::Vector2f oldPosition;
-
+class MoveCommand : public CommandInterface
+{
 public:
-  MoveCommand(Shape *shape, const sf::Vector2f &newPosition);
+  MoveCommand(std::shared_ptr<Shape> shape, const sf::Vector2f &newPosition);
+
   void execute() override;
   void undo() override;
+
+private:
+  std::shared_ptr<Shape> shape;
+  sf::Vector2f oldPosition;
+  sf::Vector2f newPosition;
 };
 
-#endif // MOVE_COMMAND_H
+#endif // MOVECOMMAND_H

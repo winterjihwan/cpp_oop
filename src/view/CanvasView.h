@@ -5,16 +5,17 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-class Canvas_view {
+class Canvas_view
+{
 private:
   sf::RenderWindow *window;
 
 public:
   Canvas_view(sf::RenderWindow *window);
 
-  void render(const std::vector<Shape *> &shapes);
+  void render(const std::vector<std::shared_ptr<Shape>> &shapes);
 
-  void update_view(const std::vector<Shape *> &shapes);
+  void update_view(const std::vector<std::shared_ptr<Shape>> &shapes);
 };
 
 #endif // CANVAS_VIEW_H

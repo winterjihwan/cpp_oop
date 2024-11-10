@@ -5,16 +5,25 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class StatusView {
+class StatusView
+{
 public:
   StatusView(sf::RenderWindow *window);
 
-  enum class FocusedField { None, PosX, PosY, SizeX, SizeY, Z };
+  enum class FocusedField
+  {
+    None,
+    PosX,
+    PosY,
+    SizeX,
+    SizeY,
+    Z
+  };
 
-  void render(const Shape *shape);
+  void render(const std::shared_ptr<Shape> &shape);
   void clear();
   void handleTextInput(char inputChar);
-  void applyChanges(Shape *shape);
+  void applyChanges(const std::shared_ptr<Shape> &shape);
   void setFocusedField(FocusedField field);
 
   const sf::Text &getPosXEntry() const { return posXEntryText; }
@@ -51,7 +60,7 @@ private:
   sf::Text colorValue;
 
   void displayText(const std::string &text, const sf::Vector2f &position);
-  void updateEntryFields(const Shape *shape);
+  void updateEntryFields(const std::shared_ptr<Shape> &shape);
 };
 
 #endif // STATUSVIEW_H

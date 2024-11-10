@@ -3,10 +3,12 @@
 
 #include "ShapeFactory.h"
 #include <SFML/Graphics.hpp>
+#include <memory>
 
-class EllipseFactory : public Shape_factory {
+class EllipseFactory : public Shape_factory
+{
 public:
-  Shape *createShape(const sf::Vector2f &position) override;
+  std::shared_ptr<Shape> createShape(const sf::Vector2f &position) override;
 };
 
 #endif // ELLIPSE_FACTORY_H

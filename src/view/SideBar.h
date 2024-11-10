@@ -16,7 +16,7 @@ public:
 
 private:
   sf::RectangleShape sidebarRect;
-  std::vector<std::unique_ptr<Shape>> previewShapes;
+  std::vector<std::shared_ptr<Shape>> previewShapes;
   std::vector<sf::RectangleShape> buttons;
   std::vector<std::string> buttonLabels;
 
