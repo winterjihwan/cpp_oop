@@ -2,10 +2,13 @@
 #define STATUSVIEW_H
 
 #include "../model/Shape.h"
+#include "../observer/Observer.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class StatusView {
+class CanvasController;
+
+class StatusView : public Observer {
 public:
   StatusView(sf::RenderWindow *window);
 
@@ -22,6 +25,8 @@ public:
   const sf::Text &getSizeXEntry() const { return sizeXEntryText; }
   const sf::Text &getSizeYEntry() const { return sizeYEntryText; }
   const sf::Text &getZEntry() const { return zEntryText; }
+
+  void update() override;
 
 private:
   sf::RenderWindow *window;
