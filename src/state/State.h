@@ -22,6 +22,8 @@ public:
   virtual void handleKeyPress(sf::Keyboard::Key key,
                               CanvasController &controller,
                               StatusView &statusView) = 0;
+  virtual void handleTextInput(char character, StatusView &statusView,
+                               UIContext &context) = 0;
 };
 
 #endif // STATE_H

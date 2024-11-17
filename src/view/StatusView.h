@@ -3,7 +3,7 @@
 
 #include "../model/Shape.h"
 #include <SFML/Graphics.hpp>
-#include <string>
+#include <iostream>
 
 class StatusView {
 public:
@@ -22,8 +22,6 @@ public:
   const sf::Text &getSizeXEntry() const { return sizeXEntryText; }
   const sf::Text &getSizeYEntry() const { return sizeYEntryText; }
   const sf::Text &getZEntry() const { return zEntryText; }
-
-  void confirmInput();
 
 private:
   sf::RenderWindow *window;

@@ -59,3 +59,5 @@ void ContextState::handleKeyPress(sf::Keyboard::Key key,
     statusView.applyChanges(controller.getSelectedShape());
   }
 }
+
+void ContextState::handleTextInput(char, StatusView &, UIContext &) {}

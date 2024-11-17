@@ -71,7 +71,7 @@ public:
   bool isSelectionActive() const;
   sf::Vector2f getCompositeShapePosition() const;
 
-  void edit_properties(sf::Vector2f mousePos);
+  void setFocusField(sf::Vector2f mousePos);
 };
 
 #endif // CANVAS_CONTROLLER_H

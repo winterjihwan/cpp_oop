@@ -222,9 +222,7 @@ sf::Vector2f CanvasController::getCompositeShapePosition() const {
   return sf::Vector2f(0, 0);
 }
 
-void CanvasController::edit_properties(sf::Vector2f mousePos) {
-  // Example logic for editing properties
-  // This assumes StatusView has methods to check which field is being edited
+void CanvasController::setFocusField(sf::Vector2f mousePos) {
   if (status_view->getPosXEntry().getGlobalBounds().contains(mousePos)) {
     status_view->setFocusedField(StatusView::FocusedField::PosX);
   } else if (status_view->getPosYEntry().getGlobalBounds().contains(mousePos)) {

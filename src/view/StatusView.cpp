@@ -142,18 +142,23 @@ void StatusView::handleTextInput(char inputChar) {
 
   switch (focusedField) {
   case FocusedField::PosX:
+    std::cout << "Focus field pos x\n";
     currentEntry = &posXEntryValue;
     break;
   case FocusedField::PosY:
+    std::cout << "Focus field pos y\n";
     currentEntry = &posYEntryValue;
     break;
   case FocusedField::SizeX:
+    std::cout << "Focus field size x\n";
     currentEntry = &sizeXEntryValue;
     break;
   case FocusedField::SizeY:
+    std::cout << "Focus field size x\n";
     currentEntry = &sizeYEntryValue;
     break;
   case FocusedField::Z:
+    std::cout << "Focus field z\n";
     currentEntry = &zEntryValue;
     break;
   default:
@@ -184,31 +189,10 @@ void StatusView::applyChanges(const std::shared_ptr<Shape> &shape) {
   int newHeight = std::stoi(sizeYEntryValue);
   int newZ = std::stoi(zEntryValue);
 
+  std::cout << "Applying Changes: " << newX << ", " << newY << ", " << newWidth
+            << ", " << newHeight << ", " << newZ << std::endl;
+
   shape->setPosition(sf::Vector2f(newX, newY));
   shape->setSize(sf::Vector2f(newWidth, newHeight));
   shape->setZ(newZ);
-}
-
-void StatusView::confirmInput() {
-  switch (focusedField) {
-  case FocusedField::PosX:
-    // Apply PosX change logic
-    break;
-  case FocusedField::PosY:
-    // Apply PosY change logic
-    break;
-  case FocusedField::SizeX:
-    // Apply SizeX change logic
-    break;
-  case FocusedField::SizeY:
-    // Apply SizeY change logic
-    break;
-  case FocusedField::Z:
-    // Apply Z order change logic
-    break;
-  case FocusedField::None:
-    // Do nothing
-    break;
-  }
-  setFocusedField(FocusedField::None);
 }

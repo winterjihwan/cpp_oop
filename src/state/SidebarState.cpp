@@ -15,3 +15,5 @@ void SidebarState::handleMouseRelease(sf::Vector2f, CanvasController &,
 
 void SidebarState::handleKeyPress(sf::Keyboard::Key, CanvasController &,
                                   StatusView &) {}
+
+void SidebarState::handleTextInput(char, StatusView &, UIContext &) {}

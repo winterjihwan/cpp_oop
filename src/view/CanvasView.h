@@ -5,8 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-class Canvas_view
-{
+class Canvas_view {
 private:
   sf::RenderWindow *window;
 

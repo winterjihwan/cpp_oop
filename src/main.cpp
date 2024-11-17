@@ -13,8 +13,6 @@
 #include "factories/TextFactory.h"
 #include <SFML/Graphics.hpp>
 
-const float DRAG_THRESHOLD = 5.0f;
-
 int main() {
   sf::RenderWindow window(sf::VideoMode(1200, 800), "Miridi Project",
                           sf::Style::Titlebar | sf::Style::Close);
@@ -65,7 +63,8 @@ int main() {
       }
 
       if (event.type == sf::Event::TextEntered) {
-        status_view.handleTextInput(static_cast<char>(event.text.unicode));
+        uiContext.getState()->handleTextInput(
+            static_cast<char>(event.text.unicode), status_view, uiContext);
       }
 
       if (event.type == sf::Event::KeyPressed) {
