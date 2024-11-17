@@ -2,13 +2,12 @@
 #ifndef MOVECOMMAND_H
 #define MOVECOMMAND_H
 
+#include "../model/Shape.h"
 #include "CommandInterface.h"
-#include "Shape.h"
 #include <SFML/Graphics.hpp>
 #include <memory>
 
-class MoveCommand : public CommandInterface
-{
+class MoveCommand : public CommandInterface {
 public:
   MoveCommand(std::shared_ptr<Shape> shape, const sf::Vector2f &newPosition);
 

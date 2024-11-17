@@ -3,11 +3,10 @@
 #define COMMAND_H
 
 #include "CommandInterface.h"
-#include <stack>
 #include <memory>
+#include <stack>
 
-class Command
-{
+class Command {
 public:
   void executeCommand(std::shared_ptr<CommandInterface> command);
   void undo();

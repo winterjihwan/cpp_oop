@@ -1,3 +1,4 @@
+
 #include "./controller/CanvasController.h"
 #include "./factories/EllipseFactory.h"
 #include "./factories/LineFactory.h"
@@ -35,6 +36,7 @@ int main() {
   SidebarState sidebarState;
   ContextState contextState;
   PropertyState propertyState;
+
   UIContext uiContext(&sidebarState, &contextState, &propertyState);
 
   while (window.isOpen()) {
@@ -45,32 +47,21 @@ int main() {
     uiContext.updateState(mousePos.x, static_cast<float>(window.getSize().x));
 
     while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
+      if (event.type == sf::Event::Closed)
         window.close();
-      }
 
       if (event.type == sf::Event::MouseButtonPressed &&
           event.mouseButton.button == sf::Mouse::Left) {
-        uiContext.getState()->handleMousePress(mousePos, controller, uiContext);
+        uiContext.getState()->handleMousePress(mousePos, controller);
       }
 
       if (event.type == sf::Event::MouseMoved) {
-        uiContext.getState()->handleMouseMove(mousePos, controller, uiContext);
+        uiContext.getState()->handleMouseMove(mousePos, controller);
       }
 
       if (event.type == sf::Event::MouseButtonReleased &&
           event.mouseButton.button == sf::Mouse::Left) {
-        uiContext.getState()->handleMouseRelease(mousePos, controller,
-                                                 uiContext);
-      }
-
-      if (event.type == sf::Event::TextEntered) {
-        status_view.handleTextInput(static_cast<char>(event.text.unicode));
-      }
-
-      if (event.type == sf::Event::KeyPressed) {
-        uiContext.getState()->handleKeyPress(event.key.code, controller,
-                                             status_view);
+        uiContext.getState()->handleMouseRelease(mousePos, controller);
       }
     }
 

@@ -1,23 +1,22 @@
 #ifndef CANVAS_CONTROLLER_H
 #define CANVAS_CONTROLLER_H
 
-#include "../model/Shape.h"
-#include "../model/CompositeShape.h"
+#include "../command/Command.h"
 #include "../factories/ShapeFactory.h"
+#include "../model/CompositeShape.h"
+#include "../model/Shape.h"
 #include "../view/CanvasView.h"
 #include "../view/Sidebar.h"
 #include "../view/StatusView.h"
-#include "../command/Command.h"
 #include <SFML/Graphics.hpp>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 class Shape_factory;
 class Canvas_view;
 class StatusView;
 
-class Canvas_controller
-{
+class CanvasController {
 private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
@@ -38,25 +37,27 @@ private:
   Command commandManager;
 
 public:
-  Canvas_controller(Shape_factory *rectangle_factory,
-                    Shape_factory *ellipse_factory, Shape_factory *line_factory,
-                    Shape_factory *text_factory, Shape_factory *image_factory,
-                    Canvas_view *canvas_view, StatusView *status_view,
-                    Sidebar *sidebar);
+  CanvasController(Shape_factory *rectangle_factory,
+                   Shape_factory *ellipse_factory, Shape_factory *line_factory,
+                   Shape_factory *text_factory, Shape_factory *image_factory,
+                   Canvas_view *canvas_view, StatusView *status_view,
+                   Sidebar *sidebar);
 
   void handleSidebarClick(const sf::Vector2f &clickPosition);
 
   void create_shape(const std::string &shapeType, const sf::Vector2f &position);
-  void select_shape(const sf::Vector2f &click_position, bool multiSelect = false);
+  void select_shape(const sf::Vector2f &click_position,
+                    bool multiSelect = false);
   void move_shape(const sf::Vector2f &new_position);
   void resize_shape(const sf::Vector2f &new_size); // For resizing functionality
 
   void deselect_shape();
   void end_drag();
 
-  void executeCommand(std::shared_ptr<CommandInterface> command); // Method to execute commands
-  void undo();                                                    // Method to undo the last command
-  void redo();                                                    // Method to redo the last undone command
+  void executeCommand(
+      std::shared_ptr<CommandInterface> command); // Method to execute commands
+  void undo(); // Method to undo the last command
+  void redo(); // Method to redo the last undone command
 
   std::shared_ptr<Shape> getSelectedShape() const;
   std::unordered_map<std::shared_ptr<Shape>, sf::Vector2f> shape_offsets;
@@ -69,6 +70,8 @@ public:
   bool isSingleSelection() const;
   bool isSelectionActive() const;
   sf::Vector2f getCompositeShapePosition() const;
+
+  void edit_properties(sf::Vector2f mousePos);
 };
 
 #endif // CANVAS_CONTROLLER_H

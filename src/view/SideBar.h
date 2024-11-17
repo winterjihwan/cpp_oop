@@ -3,12 +3,11 @@
 
 #include "../model/Shape.h"
 #include <SFML/Graphics.hpp>
+#include <memory>
 #include <string>
 #include <vector>
-#include <memory>
 
-class Sidebar
-{
+class Sidebar {
 public:
   Sidebar(float width, float height);
   void render(sf::RenderWindow &window);

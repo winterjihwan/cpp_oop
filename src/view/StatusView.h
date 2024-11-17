@@ -5,20 +5,11 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class StatusView
-{
+class StatusView {
 public:
   StatusView(sf::RenderWindow *window);
 
-  enum class FocusedField
-  {
-    None,
-    PosX,
-    PosY,
-    SizeX,
-    SizeY,
-    Z
-  };
+  enum class FocusedField { None, PosX, PosY, SizeX, SizeY, Z };
 
   void render(const std::shared_ptr<Shape> &shape);
   void clear();
@@ -31,6 +22,8 @@ public:
   const sf::Text &getSizeXEntry() const { return sizeXEntryText; }
   const sf::Text &getSizeYEntry() const { return sizeYEntryText; }
   const sf::Text &getZEntry() const { return zEntryText; }
+
+  void confirmInput();
 
 private:
   sf::RenderWindow *window;
