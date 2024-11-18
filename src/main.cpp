@@ -13,7 +13,8 @@
 #include "factories/TextFactory.h"
 #include <SFML/Graphics.hpp>
 
-int main() {
+int main()
+{
   sf::RenderWindow window(sf::VideoMode(1200, 800), "Miridi Project",
                           sf::Style::Titlebar | sf::Style::Close);
 
@@ -35,39 +36,47 @@ int main() {
   PropertyState propertyState;
   UIContext uiContext(&sidebarState, &contextState, &propertyState);
 
-  while (window.isOpen()) {
+  while (window.isOpen())
+  {
     sf::Event event;
     sf::Vector2f mousePos =
         window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
     uiContext.updateState(mousePos.x, static_cast<float>(window.getSize().x));
 
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
+    while (window.pollEvent(event))
+    {
+      if (event.type == sf::Event::Closed)
+      {
         window.close();
       }
 
       if (event.type == sf::Event::MouseButtonPressed &&
-          event.mouseButton.button == sf::Mouse::Left) {
+          event.mouseButton.button == sf::Mouse::Left)
+      {
         uiContext.getState()->handleMousePress(mousePos, controller, uiContext);
       }
 
-      if (event.type == sf::Event::MouseMoved) {
+      if (event.type == sf::Event::MouseMoved)
+      {
         uiContext.getState()->handleMouseMove(mousePos, controller, uiContext);
       }
 
       if (event.type == sf::Event::MouseButtonReleased &&
-          event.mouseButton.button == sf::Mouse::Left) {
+          event.mouseButton.button == sf::Mouse::Left)
+      {
         uiContext.getState()->handleMouseRelease(mousePos, controller,
                                                  uiContext);
       }
 
-      if (event.type == sf::Event::TextEntered) {
+      if (event.type == sf::Event::TextEntered)
+      {
         uiContext.getState()->handleTextInput(
             static_cast<char>(event.text.unicode), status_view, uiContext);
       }
 
-      if (event.type == sf::Event::KeyPressed) {
+      if (event.type == sf::Event::KeyPressed)
+      {
         uiContext.getState()->handleKeyPress(event.key.code, controller,
                                              status_view);
       }

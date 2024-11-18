@@ -162,20 +162,15 @@ void StatusView::handleTextInput(char inputChar) {
     currentEntry = &zEntryValue;
     break;
   default:
-    std::cout << "No field is focused." << std::endl;
     return;
   }
 
   if (inputChar == '\b' && currentEntry != nullptr) {
     if (!currentEntry->empty()) {
       currentEntry->pop_back();
-      std::cout << "Backspace pressed. Updated field: " << *currentEntry
-                << std::endl;
     }
   } else if (std::isdigit(inputChar)) {
     *currentEntry += inputChar;
-    std::cout << "Digit entered: " << inputChar
-              << " Updated field: " << *currentEntry << std::endl;
   }
 }
 
