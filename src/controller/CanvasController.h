@@ -8,6 +8,7 @@
 #include "../view/CanvasView.h"
 #include "../view/Sidebar.h"
 #include "../view/StatusView.h"
+#include "../observer/Subject.h"
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <vector>
@@ -16,7 +17,7 @@ class Shape_factory;
 class Canvas_view;
 class StatusView;
 
-class CanvasController {
+class CanvasController : public Subject {
 private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
@@ -49,15 +50,14 @@ public:
   void select_shape(const sf::Vector2f &click_position,
                     bool multiSelect = false);
   void move_shape(const sf::Vector2f &new_position);
-  void resize_shape(const sf::Vector2f &new_size); // For resizing functionality
+  void resize_shape(const sf::Vector2f &new_size);
 
   void deselect_shape();
   void end_drag();
 
-  void executeCommand(
-      std::shared_ptr<CommandInterface> command); // Method to execute commands
-  void undo(); // Method to undo the last command
-  void redo(); // Method to redo the last undone command
+  void executeCommand(std::shared_ptr<CommandInterface> command);
+  void undo();
+  void redo();
 
   std::shared_ptr<Shape> getSelectedShape() const;
   std::unordered_map<std::shared_ptr<Shape>, sf::Vector2f> shape_offsets;
@@ -72,6 +72,8 @@ public:
   sf::Vector2f getCompositeShapePosition() const;
 
   void setFocusField(sf::Vector2f mousePos);
+
+  void notifyObservers();
 };
 
 #endif // CANVAS_CONTROLLER_H

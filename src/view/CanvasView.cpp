@@ -19,3 +19,5 @@ void Canvas_view::update_view(
     }
   }
 }
+
+void Canvas_view::update() {}

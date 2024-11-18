@@ -30,6 +30,8 @@ int main()
   CanvasController controller(&rectangleFactory, &ellipseFactory, &lineFactory,
                               &textFactory, &imageFactory, &canvas_view,
                               &status_view, &sidebar);
+  controller.attach(std::make_shared<StatusView>(status_view));
+  controller.attach(std::make_shared<Sidebar>(sidebar));
 
   SidebarState sidebarState;
   ContextState contextState;

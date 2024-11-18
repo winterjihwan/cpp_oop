@@ -1,4 +1,3 @@
-
 #include "SideBar.h"
 #include "../factories/EllipseFactory.h"
 #include "../factories/ImageFactory.h"
@@ -75,3 +74,5 @@ std::string Sidebar::handleClick(const sf::Vector2f &clickPosition) {
   }
   return "";
 }
+
+void Sidebar::update() {}
