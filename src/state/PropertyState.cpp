@@ -17,21 +17,7 @@ void PropertyState::handleKeyPress(sf::Keyboard::Key key,
                                    CanvasController &controller,
                                    StatusView &statusView)
 {
-  bool isCtrlPressed = sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) ||
-                       sf::Keyboard::isKeyPressed(sf::Keyboard::RControl);
-
-  if (isCtrlPressed)
-  {
-    if (key == sf::Keyboard::Z)
-    {
-      controller.undo();
-    }
-    else if (key == sf::Keyboard::Y)
-    {
-      controller.redo();
-    }
-  }
-  else if (key == sf::Keyboard::Enter)
+  if (key == sf::Keyboard::Enter)
   {
     // Handle Enter key logic
     if (controller.getSelectedShape() && controller.isSingleSelection())

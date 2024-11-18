@@ -79,8 +79,24 @@ int main()
 
       if (event.type == sf::Event::KeyPressed)
       {
-        uiContext.getState()->handleKeyPress(event.key.code, controller,
-                                             status_view);
+        bool isCtrlPressed = sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) ||
+                             sf::Keyboard::isKeyPressed(sf::Keyboard::RControl);
+
+        if (isCtrlPressed)
+        {
+          if (event.key.code == sf::Keyboard::Z)
+          {
+            controller.undo();
+          }
+          else if (event.key.code == sf::Keyboard::Y)
+          {
+            controller.redo();
+          }
+        }
+        else
+        {
+          uiContext.getState()->handleKeyPress(event.key.code, controller, status_view);
+        }
       }
     }
 
