@@ -192,4 +192,6 @@ void StatusView::applyChanges(const std::shared_ptr<Shape> &shape) {
   shape->setZ(newZ);
 }
 
-void StatusView::update() { render(nullptr); }
+void StatusView::update(const std::vector<std::shared_ptr<Shape>> &shapes) {
+  render(nullptr);
+}

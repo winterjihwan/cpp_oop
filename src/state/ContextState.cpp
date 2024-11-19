@@ -5,7 +5,7 @@ void ContextState::handleMousePress(sf::Vector2f mousePos,
                                     UIContext &context) {
   std::string selectedShapeType = controller.getSelectedShapeType();
 
-  if (!selectedShapeType.empty()) {
+  if (!selectedShapeType.empty() && context.getShouldCreateShape()) {
     controller.create_shape(selectedShapeType, mousePos);
     context.setShouldCreateShape(false);
   } else {

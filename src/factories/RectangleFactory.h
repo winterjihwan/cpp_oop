@@ -5,8 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 
-class RectangleFactory : public Shape_factory
-{
+class RectangleFactory : public Shape_factory {
 public:
   std::shared_ptr<Shape> createShape(const sf::Vector2f &position) override;
 };

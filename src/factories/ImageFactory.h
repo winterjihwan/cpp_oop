@@ -3,11 +3,10 @@
 
 #include "ShapeFactory.h"
 #include <SFML/Graphics.hpp>
-#include <string>
 #include <memory>
+#include <string>
 
-class ImageFactory : public Shape_factory
-{
+class ImageFactory : public Shape_factory {
 private:
   std::string filepath;
 

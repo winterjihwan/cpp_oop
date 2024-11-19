@@ -26,7 +26,7 @@ public:
   const sf::Text &getSizeYEntry() const { return sizeYEntryText; }
   const sf::Text &getZEntry() const { return zEntryText; }
 
-  void update() override;
+  void update(const std::vector<std::shared_ptr<Shape>> &shapes) override;
 
 private:
   sf::RenderWindow *window;

@@ -5,10 +5,10 @@
 #include "../factories/ShapeFactory.h"
 #include "../model/CompositeShape.h"
 #include "../model/Shape.h"
+#include "../observer/Subject.h"
 #include "../view/CanvasView.h"
 #include "../view/Sidebar.h"
 #include "../view/StatusView.h"
-#include "../observer/Subject.h"
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <vector>

@@ -51,8 +51,8 @@ void CanvasController::create_shape(const std::string &shapeType,
 
   if (new_shape) {
     shapes.push_back(new_shape);
-    canvas_view->render(shapes);
-    notify();
+    canvas_view->update(shapes);
+    notify(shapes);
   }
 
   selectedShapeType = "";
@@ -138,7 +138,7 @@ void CanvasController::move_shape(const sf::Vector2f &new_position) {
                                                      new_position + offset);
     executeCommand(moveCommand);
     isStatusViewDirty = true;
-    notify();
+    notify(shapes);
   } else if (!selected_shapes->empty()) {
     for (const auto &pair : shape_offsets) {
       auto shape = pair.first;
@@ -149,7 +149,7 @@ void CanvasController::move_shape(const sf::Vector2f &new_position) {
       executeCommand(moveCommand);
     }
     isStatusViewDirty = true;
-    notify();
+    notify(shapes);
   }
 }
 
@@ -186,7 +186,7 @@ void CanvasController::deselect_shape() {
   }
   isStatusViewDirty = true;
   status_view->clear();
-  notify();
+  notify(shapes);
 }
 
 std::shared_ptr<Shape> CanvasController::getSelectedShape() const {
@@ -196,7 +196,7 @@ std::string CanvasController::getSelectedShapeType() const {
   return selectedShapeType;
 }
 
-void CanvasController::render_shapes() { canvas_view->render(shapes); }
+void CanvasController::render_shapes() { canvas_view->update(shapes); }
 
 void CanvasController::end_drag() {
   is_dragging = false;

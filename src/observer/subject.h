@@ -1,6 +1,7 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 
+#include "../model/Shape.h"
 #include "Observer.h"
 #include <algorithm>
 #include <memory>
@@ -20,9 +21,9 @@ public:
                     observers.end());
   }
 
-  void notify() {
+  void notify(const std::vector<std::shared_ptr<Shape>> &shapes) {
     for (const auto &observer : observers) {
-      observer->update();
+      observer->update(shapes);
     }
   }
 };

@@ -75,4 +75,4 @@ std::string Sidebar::handleClick(const sf::Vector2f &clickPosition) {
   return "";
 }
 
-void Sidebar::update() {}
+void Sidebar::update(const std::vector<std::shared_ptr<Shape>> &shapes) {}

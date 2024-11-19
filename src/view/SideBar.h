@@ -14,7 +14,7 @@ public:
 
   void render(sf::RenderWindow &window);
   std::string handleClick(const sf::Vector2f &clickPosition);
-  void update() override;
+  void update(const std::vector<std::shared_ptr<Shape>> &shapes) override;
 
 private:
   sf::RectangleShape sidebarRect;

@@ -13,11 +13,7 @@ private:
 public:
   Canvas_view(sf::RenderWindow *window);
 
-  void render(const std::vector<std::shared_ptr<Shape>> &shapes);
-
-  void update_view(const std::vector<std::shared_ptr<Shape>> &shapes);
-
-  void update() override;
+  void update(const std::vector<std::shared_ptr<Shape>> &shapes) override;
 };
 
 #endif // CANVAS_VIEW_H
