@@ -44,6 +44,8 @@ public:
 
     bool contains(const std::shared_ptr<Shape> &shape) const;
 
+    void move(const sf::Vector2f &delta) override;
+
 private:
     std::vector<std::shared_ptr<Shape>> children;
 };

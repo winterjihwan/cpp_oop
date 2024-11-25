@@ -6,7 +6,8 @@
 #include <memory>
 #include <vector>
 
-class Shape : public sf::Drawable {
+class Shape : public sf::Drawable
+{
 public:
   virtual ~Shape() = default;
 
@@ -19,6 +20,7 @@ public:
   virtual bool isSelected(const sf::Vector2f &point) const = 0;
   virtual void highlight() = 0;
   virtual void unhighlight() = 0;
+  virtual void move(const sf::Vector2f &offset) = 0;
 
   void setZ(int z) { this->z = z; }
   int getZ() const { return z; }

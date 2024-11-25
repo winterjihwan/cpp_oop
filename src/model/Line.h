@@ -4,7 +4,8 @@
 #include "Shape.h"
 #include <SFML/Graphics.hpp>
 
-class Line : public Shape {
+class Line : public Shape
+{
 private:
   sf::VertexArray line;
 
@@ -23,6 +24,8 @@ public:
   sf::Color getColor() const override;
 
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
+
+  void move(const sf::Vector2f &offset);
 };
 
 #endif // LINE_H

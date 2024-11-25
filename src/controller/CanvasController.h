@@ -17,7 +17,8 @@ class Shape_factory;
 class Canvas_view;
 class StatusView;
 
-class CanvasController : public Subject {
+class CanvasController : public Subject
+{
 private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
@@ -29,8 +30,7 @@ private:
   Sidebar *sidebar;
 
   std::vector<std::shared_ptr<Shape>> shapes;
-  std::shared_ptr<CompositeShape> selected_shapes;
-  std::shared_ptr<Shape> single_selected_shape = nullptr;
+  std::shared_ptr<Shape> selected_shape;
 
   std::string selectedShapeType;
   sf::Vector2f offset;

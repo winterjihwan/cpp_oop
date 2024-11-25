@@ -5,7 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class Image : public Shape {
+class Image : public Shape
+{
 private:
   sf::Sprite sprite;
   sf::Texture texture;
@@ -23,6 +24,7 @@ public:
   void unhighlight() override;
 
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
+  void move(const sf::Vector2f &offset);
   sf::Color getColor() const override;
 };
 

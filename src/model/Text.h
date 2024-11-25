@@ -5,7 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class Text : public Shape {
+class Text : public Shape
+{
 private:
   sf::Text text;
   sf::Font font;
@@ -28,6 +29,7 @@ public:
 
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
   sf::Color getColor() const override;
+  void move(const sf::Vector2f &offset);
 };
 
 #endif // TEXT_H

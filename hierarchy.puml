@@ -1,0 +1,255 @@
+@startuml hierarchy
+
+' ============= Command Pattern =============
+abstract class CommandInterface {
+    + execute() : void
+    + undo() : void
+}
+
+class Command {
+    + executeCommand(command: CommandInterface)
+    + undo()
+    + redo()
+    - undoStack: std::stack<std::shared_ptr<CommandInterface>>
+    - redoStack: std::stack<std::shared_ptr<CommandInterface>>
+}
+
+class MoveCommand implements CommandInterface {
+    + execute() : void
+    + undo() : void
+}
+
+class ResizeCommand implements CommandInterface {
+    + execute() : void
+    + undo() : void
+}
+
+class HighlightCommand implements CommandInterface {
+    + execute() : void
+    + undo() : void
+}
+
+Command --> CommandInterface : "Manages"
+
+' ============= Shape and Composite Pattern =============
+
+
+' Concrete Factories
+' ============= Factory Pattern =============
+' Abstract Shape class
+abstract class Shape {
+    + getPosition() : sf::Vector2f
+    + getSize() : sf::Vector2f
+    + getColor() : sf::Color
+    + setPosition(position: sf::Vector2f)
+    + setSize(size: sf::Vector2f)
+    + move(offset: sf::Vector2f)
+    + highlight()
+    + unhighlight()
+    + isSelected(point: sf::Vector2f) : bool
+    + add(shape: Shape)
+    + remove(shape: Shape)
+    + getChild(index: int) : Shape
+    + getDetails() : string
+    - z : int
+}
+
+' CompositeShape class
+class CompositeShape {
+    + add(shape: Shape)
+    + remove(shape: Shape)
+    + getChild(index: int) : Shape
+    + getChildren() : std::vector<Shape>
+    + clear()
+    + empty() : bool
+    + setPosition(position: sf::Vector2f)
+    + getPosition() : sf::Vector2f
+    + setSize(size: sf::Vector2f)
+    + getSize() : sf::Vector2f
+    + move(delta: sf::Vector2f)
+    + contains(shape: Shape) : bool
+    + isSelected(point: sf::Vector2f) : bool
+    - children : std::vector<std::shared_ptr<Shape>>
+}
+
+' Factory classes
+abstract class ShapeFactory {
+    + createShape(position: sf::Vector2f) : Shape
+}
+
+class RectangleFactory {
+    + createShape(position: sf::Vector2f) : Rectangle
+}
+
+class EllipseFactory {
+    + createShape(position: sf::Vector2f) : Ellipse
+}
+
+class LineFactory {
+    + createShape(position: sf::Vector2f) : Line
+}
+
+class TextFactory {
+    + createShape(position: sf::Vector2f) : Text
+}
+
+class ImageFactory {
+    + createShape(position: sf::Vector2f) : Image
+}
+
+' Leaf Shape classes
+class Rectangle {
+    + getPosition() : sf::Vector2f
+    + getSize() : sf::Vector2f
+    + getColor() : sf::Color
+    + setPosition(position: sf::Vector2f)
+    + setSize(size: sf::Vector2f)
+    + move(offset: sf::Vector2f)
+    + highlight()
+    + unhighlight()
+    + isSelected(point: sf::Vector2f) : bool
+    - position : sf::Vector2f
+    - size : sf::Vector2f
+    - color : sf::Color
+    - highlighted : bool
+}
+
+class Ellipse {
+    + getPosition() : sf::Vector2f
+    + getSize() : sf::Vector2f
+    + getColor() : sf::Color
+    + setPosition(position: sf::Vector2f)
+    + setSize(size: sf::Vector2f)
+    + move(offset: sf::Vector2f)
+    + highlight()
+    + unhighlight()
+    + isSelected(point: sf::Vector2f) : bool
+    - position : sf::Vector2f
+    - size : sf::Vector2f
+    - color : sf::Color
+    - highlighted : bool
+}
+
+class Line {
+    + getPosition() : sf::Vector2f
+    + getSize() : sf::Vector2f
+    + getColor() : sf::Color
+    + setPosition(position: sf::Vector2f)
+    + setSize(size: sf::Vector2f)
+    + move(offset: sf::Vector2f)
+    + highlight()
+    + unhighlight()
+    + isSelected(point: sf::Vector2f) : bool
+    - position : sf::Vector2f
+    - size : sf::Vector2f
+    - color : sf::Color
+    - highlighted : bool
+}
+
+class Text {
+    + getPosition() : sf::Vector2f
+    + getSize() : sf::Vector2f
+    + getColor() : sf::Color
+    + setPosition(position: sf::Vector2f)
+    + setSize(size: sf::Vector2f)
+    + move(offset: sf::Vector2f)
+    + highlight()
+    + unhighlight()
+    + isSelected(point: sf::Vector2f) : bool
+    - position : sf::Vector2f
+    - size : sf::Vector2f
+    - color : sf::Color
+    - highlighted : bool
+    - text : std::string
+}
+
+class Image {
+    + getPosition() : sf::Vector2f
+    + getSize() : sf::Vector2f
+    + getColor() : sf::Color
+    + setPosition(position: sf::Vector2f)
+    + setSize(size: sf::Vector2f)
+    + move(offset: sf::Vector2f)
+    + highlight()
+    + unhighlight()
+    + isSelected(point: sf::Vector2f) : bool
+    - position : sf::Vector2f
+    - size : sf::Vector2f
+    - color : sf::Color
+    - highlighted : bool
+    - imagePath : std::string
+}
+
+' Relationships
+Shape <|-- CompositeShape
+Shape <|-- Rectangle
+Shape <|-- Ellipse
+Shape <|-- Line
+Shape <|-- Text
+Shape <|-- Image
+
+ShapeFactory <|-- RectangleFactory
+ShapeFactory <|-- EllipseFactory
+ShapeFactory <|-- LineFactory
+ShapeFactory <|-- TextFactory
+ShapeFactory <|-- ImageFactory
+ShapeFactory --> Shape : "Creates"
+
+' ============= MVC Components =============
+class Model {
+}
+
+class CanvasView {
+  +update()
+}
+
+class CanvasController {
+  +createShape()
+  +moveShape()
+  +notify()
+}
+
+abstract class Observer {
+  +update()
+}
+
+abstract class Subject{}
+
+' MVC Relationships
+Model --> Shape : "Holds"
+CanvasView <.. Model
+CanvasController <--> Model
+CanvasController <--> CanvasView
+CanvasController --> Command
+
+Subject <|-- CanvasController : extends
+Observer <|-- CanvasView : extends
+Shape <|.. CanvasController : modifies
+
+abstract class State {
+  +handle()
+}
+
+class ContextState {
+  +handle()
+}
+
+class PropertyState {
+  +handle()
+}
+
+class SidebarState {
+  +handle()
+}
+
+class UIContext {
+  +updateState()
+  +getState()
+}
+
+State <|-- ContextState
+State <|-- PropertyState
+State <|-- SidebarState
+UIContext o- State : currentState
+
+@enduml

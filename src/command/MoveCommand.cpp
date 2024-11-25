@@ -6,18 +6,14 @@ MoveCommand::MoveCommand(std::shared_ptr<Shape> shape,
     : shape(shape), newPosition(newPosition),
       oldPosition(shape->getPosition()) {}
 
-void MoveCommand::execute() {
-  // Calculate the delta
+void MoveCommand::execute()
+{
   sf::Vector2f delta = newPosition - oldPosition;
-
-  // Apply delta to move the shape
-  shape->setPosition(shape->getPosition() + delta);
+  shape->move(delta);
 }
 
-void MoveCommand::undo() {
-  // Calculate the delta to move back to the old position
+void MoveCommand::undo()
+{
   sf::Vector2f delta = oldPosition - newPosition;
-
-  // Apply delta to revert the shape's position
-  shape->setPosition(shape->getPosition() + delta);
+  shape->move(delta);
 }

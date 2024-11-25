@@ -5,7 +5,8 @@
 #include "Shape.h"
 #include <SFML/Graphics.hpp>
 
-class Rectangle : public Shape {
+class Rectangle : public Shape
+{
 private:
   sf::RectangleShape shape;
   int z;
@@ -16,7 +17,8 @@ public:
   float get_width() const;
   float get_height() const;
 
-  bool isSelected(const sf::Vector2f &point) const override {
+  bool isSelected(const sf::Vector2f &point) const override
+  {
     return shape.getGlobalBounds().contains(point);
   }
 
@@ -37,6 +39,8 @@ public:
   sf::Color getColor() const override;
 
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
+
+  void move(const sf::Vector2f &offset);
 };
 
 #endif // RECTANGLE_H

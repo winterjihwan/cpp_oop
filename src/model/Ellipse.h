@@ -4,7 +4,8 @@
 #include "Shape.h"
 #include <SFML/Graphics.hpp>
 
-class Ellipse : public Shape {
+class Ellipse : public Shape
+{
 private:
   sf::CircleShape ellipse;
 
@@ -29,6 +30,8 @@ public:
   void highlight() override;
 
   void unhighlight() override;
+
+  void move(const sf::Vector2f &offset);
 
   sf::Color getColor() const override;
 

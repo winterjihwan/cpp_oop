@@ -1,18 +1,21 @@
 // Command.cpp
 #include "Command.h"
 
-void Command::executeCommand(std::shared_ptr<CommandInterface> command) {
+void Command::executeCommand(std::shared_ptr<CommandInterface> command)
+{
   command->execute();
   undoStack.push(command);
 
-  // Clear redo stack after a new command is executed
-  while (!redoStack.empty()) {
+  while (!redoStack.empty())
+  {
     redoStack.pop();
   }
 }
 
-void Command::undo() {
-  if (!undoStack.empty()) {
+void Command::undo()
+{
+  if (!undoStack.empty())
+  {
     auto command = undoStack.top();
     undoStack.pop();
 
@@ -21,8 +24,10 @@ void Command::undo() {
   }
 }
 
-void Command::redo() {
-  if (!redoStack.empty()) {
+void Command::redo()
+{
+  if (!redoStack.empty())
+  {
     auto command = redoStack.top();
     redoStack.pop();
 
