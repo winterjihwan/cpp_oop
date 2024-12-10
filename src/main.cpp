@@ -11,6 +11,8 @@
 #include "./view/StatusView.h"
 #include "factories/ImageFactory.h"
 #include "factories/TextFactory.h"
+#include "state/ContextDefaultState.h"
+#include "state/ContextDraggingState.h"
 #include <SFML/Graphics.hpp>
 
 int main() {
@@ -34,9 +36,11 @@ int main() {
   model.attach(std::make_shared<StatusView>(status_view));
 
   SidebarState sidebarState;
-  ContextState contextState;
+  ContextDefaultState contextDefaultState;
+  ContextDraggingState contextDraggingState;
   PropertyState propertyState;
-  UIContext uiContext(&sidebarState, &contextState, &propertyState);
+  UIContext uiContext(&sidebarState, &contextDefaultState,
+                      &contextDraggingState, &propertyState);
 
   while (window.isOpen()) {
     sf::Event event;

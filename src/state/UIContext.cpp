@@ -1,14 +1,21 @@
 #include "UIContext.h"
+#include <iostream>
 
-UIContext::UIContext(State *sidebar, State *context, State *property)
-    : sidebarState(sidebar), contextState(context), propertyState(property),
-      currentState(context) {}
+UIContext::UIContext(State *sidebar, State *contextDefault,
+                     State *contextDragging, State *property)
+    : sidebarState(sidebar), contextDefaultState(contextDefault),
+      contextDraggingState(contextDragging), propertyState(property),
+      currentState(contextDefault) {}
 
 void UIContext::updateState(float cursorX, float windowWidth) {
   if (cursorX < 200.0f) {
     currentState = sidebarState;
   } else if (cursorX < windowWidth * 0.7f) {
-    currentState = contextState;
+    if (isDragging()) {
+      currentState = contextDraggingState;
+    } else {
+      currentState = contextDefaultState;
+    }
   } else {
     currentState = propertyState;
   }

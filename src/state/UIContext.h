@@ -7,7 +7,8 @@
 class UIContext {
 private:
   State *sidebarState;
-  State *contextState;
+  State *contextDefaultState;
+  State *contextDraggingState;
   State *propertyState;
   State *currentState;
 
@@ -18,7 +19,8 @@ private:
   bool drag_attempted = false;
 
 public:
-  UIContext(State *sidebar, State *context, State *property);
+  UIContext(State *sidebar, State *contextDefault, State *contextDragging,
+            State *property);
 
   void updateState(float cursorX, float windowWidth);
   State *getState();
