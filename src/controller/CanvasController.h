@@ -4,6 +4,7 @@
 #include "../command/Command.h"
 #include "../factories/ShapeFactory.h"
 #include "../model/CompositeShape.h"
+#include "../model/Model.h"
 #include "../model/Shape.h"
 #include "../observer/Subject.h"
 #include "../view/CanvasView.h"
@@ -17,8 +18,7 @@ class Shape_factory;
 class Canvas_view;
 class StatusView;
 
-class CanvasController : public Subject
-{
+class CanvasController {
 private:
   Shape_factory *rectangle_factory;
   Shape_factory *ellipse_factory;
@@ -28,8 +28,8 @@ private:
   Canvas_view *canvas_view;
   StatusView *status_view;
   Sidebar *sidebar;
+  Model *model;
 
-  std::vector<std::shared_ptr<Shape>> shapes;
   std::shared_ptr<Shape> selected_shape;
 
   std::string selectedShapeType;
@@ -42,7 +42,7 @@ public:
                    Shape_factory *ellipse_factory, Shape_factory *line_factory,
                    Shape_factory *text_factory, Shape_factory *image_factory,
                    Canvas_view *canvas_view, StatusView *status_view,
-                   Sidebar *sidebar);
+                   Sidebar *sidebar, Model *model);
 
   void handleSidebarClick(const sf::Vector2f &clickPosition);
 
@@ -72,8 +72,6 @@ public:
   sf::Vector2f getCompositeShapePosition() const;
 
   void setFocusField(sf::Vector2f mousePos);
-
-  void notifyObservers();
 };
 
 #endif // CANVAS_CONTROLLER_H

@@ -25,12 +25,13 @@ int main() {
   Canvas_view canvas_view(&window);
   StatusView status_view(&window);
   Sidebar sidebar(200.0f, 800.0f);
+  Model model;
 
   CanvasController controller(&rectangleFactory, &ellipseFactory, &lineFactory,
                               &textFactory, &imageFactory, &canvas_view,
-                              &status_view, &sidebar);
+                              &status_view, &sidebar, &model);
 
-  controller.attach(std::make_shared<StatusView>(status_view));
+  model.attach(std::make_shared<StatusView>(status_view));
 
   SidebarState sidebarState;
   ContextState contextState;
